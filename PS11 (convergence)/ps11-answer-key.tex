@@ -1,0 +1,101 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumitem,tikz, fancyhdr, wrapfig, textcomp, units, mathptmx, pdfpages, cancel, multicol}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
+
+\setlength{\headheight}{14.5pt}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\vw}{\mathbf{w}}
+\newcommand{\vi}{\mathbf{i}}
+\newcommand{\vj}{\mathbf{j}}
+\newcommand{\vk}{\mathbf{k}}
+\newcommand{\vn}{\mathbf{n}}
+\newcommand{\vr}{\mathbf{r}}
+\newcommand{\va}{\mathbf{a}}
+\newcommand{\vF}{\mathbf{F}}
+\newcommand{\vL}{\mathbf{L}}
+\newcommand{\vT}{\mathbf{T}}
+\newcommand{\vN}{\mathbf{N}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\orth}{\operatorname{orth}}
+\newcommand\del\nabla
+\newcommand\dotp[1][.5]{\,\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}\,}
+\newcommand{\slice}{_\text{slice}}
+
+% Solution text is in red. If you want the solutions to show, remove the \iffalse from the definition of the \red command.
+%\newcommand{\red}[1]{ %\iffalse
+%	\textcolor{red}{#1} }%\fi}
+
+\newenvironment{red}{\color{red}}{\ignorespacesafterend}
+\newenvironment{blue}{\color{blue}}{\ignorespacesafterend}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\renewcommand{\section}[1]{\begin{center} \textbf{#1} \\\end{center}}
+%
+\hyphenpenalty=5000
+\setlength{\parindent}{0in}
+%\oddsidemargin=-.25in
+\allowdisplaybreaks
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{MATH 202}
+\rhead{Spring 2022}
+%\lfoot{\copyright\ CLEAR Calculus 2010}
+\cfoot{}
+
+\begin{document}
+%
+
+
+%\onehalfspacing
+\allowdisplaybreaks
+%##################################################################
+\section{PS\#11 - Series convergence - \red{Answer key} }
+
+\everymath{\displaystyle}
+\begin{enumerate}[leftmargin=0pt]
+
+\item (\href{https://activecalculus.org/single/sec-8-3-series.html#CaV}{AC 8.3 Exercise 5}) In this exercise we investigate the sequence $\left\{\frac{b^n}{n!}\right\}$ for any constant $b$.
+\begin{enumerate}
+    \item Use the Ratio Test to determine if the series $\sum \frac{10^k}{k!}$ converges or diverges.
+    
+    \begin{red}
+    To use the Ratio Test, we're going to look at the limit of the ratio of the next term to the current term $\lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}$:
+    \begin{align*}
+        \lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}
+        &= \lim_{n\to\infty} \frac{10^{n+1}/(n+1)!}{10^n / n!} \\
+        &= \lim_{n\to\infty} \frac{10^{n+1}}{(n+1)!}\cdot \frac{n!}{10^n} \\
+        &= \lim_{n\to\infty} \frac{10 n!}{(n+1)!} 
+         = \lim_{n\to\infty} \frac{10}{n+1} = 0.
+    \end{align*}
+    Because this limit is less than 1, the Ratio Test tells us that the series converges.
+    \end{red}
+    \item Now apply the Ratio Test to determine if the series $\sum \frac{b^k}{k!}$ converges for any constant $b$.
+    
+    \begin{red}
+    There's nothing special about the number 10 in the work above; all our steps are just as valid if that's replaced with any other constant $b$:
+    \begin{align*}
+        \lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}
+        &= \lim_{n\to\infty} \frac{b^{n+1}/(n+1)!}{b^n / n!} \\
+        &= \lim_{n\to\infty} \frac{b^{n+1}}{(n+1)!}\cdot \frac{n!}{b^n} \\
+        &= \lim_{n\to\infty} \frac{b\cdot n!}{(n+1)!} 
+         = \lim_{n\to\infty} \frac{b}{n+1} = 0.
+    \end{align*}
+    Because this limit is less than 1, the Ratio Test tells us that the series converges.
+    \end{red}
+    \item Use your result from (b) to decide whether the sequence $\left\{\frac{b^n}{n!}\right\}$ converges or diverges. If the sequence $\left\{\frac{b^n}{n!}\right\}$ converges, to what does it converge? Explain your reasoning.
+    
+    \begin{red}
+    Since the series $\sum \frac{b^k}{k!}$ converges for any constant $b$, the Divergence Test tells us that the nth term has to go to 0. Therefore the sequence $\left\{\frac{b^n}{n!}\right\}$ must converge to 0.
+    \end{red}
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

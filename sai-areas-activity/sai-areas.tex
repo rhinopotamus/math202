@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{graphicx}
+  \DeclareGraphicsRule{*}{mps}{*}{}
+%\usepackage{bbm}
+\usepackage{marvosym}
+\usepackage{enumerate}
+\usepackage{txfonts}
+\usepackage{paralist}
+\usepackage{pdfpages}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\everymath{\displaystyle}
+
+%\usepackage{showframe}
+
+\pagestyle{empty}
+
+\usepackage{fullpage}
+%% \addtolength{\hoffset}{-1.5cm}
+%% \addtolength{\textwidth}{3cm}
+
+%% \addtolength{\voffset}{-1.5cm}
+%% \addtolength{\textheight}{3cm}
+
+\setdefaultleftmargin{0pt}{}{}{}{}{}
+
+\newcommand{\vv}[2]{#1}
+
+\hyphenpenalty=5000
+\tolerance=1000
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+  \textbf{ Math 202 -- Slice, approximate, integrate: the area between two curves
+  --- Fall 2024
+    }
+\end{center}
+
+For each of the regions listed below:
+
+\begin{itemize}
+    \item Draw a graph of all the relevant curves. (Using Desmos or something is a good choice.)
+    \item Find the intersection points of the curves. (Using Desmos or something is a good choice.)
+    \item Shade in the region that's ``bounded by'' these curves.
+    \item Draw a representative slice. Decide whether the slice should be vertical or horizontal.
+    \item Label the width of the slice and the height of the slice.
+    \item Use your labels to write an equation for $\Delta A$.
+\end{itemize}
+Notice that ``write down an integral'' is not part of these directions!
+\vfill
+
+Here's the regions:
+
+\begin{enumerate}[a.]
+\item The finite region bounded by $y=12-2x^2$ and $y=x^2-8$.
+\item The finite region bounded by $x=y^2$ and $x=6-2y^2$.
+\item The finite region bounded by $x=y^2$ and $x=4y$.
+\item The finite region bounded by $x=1-y^2$ and $x=2-2y^2$.
+\item The finite regions between the curves $y=x^3-x$ and $y=x^2$.
+\item The area bounded by the $x$-axis, $y=x^2$, and $y=2-x$.
+\item The area bounded by the $y$-axis, $y=x^2$, and $y=2-x$.
+\item The area bounded by the $y$-axis, $f(x)=\cos(x)$, and $g(x)=\sin(x)$. \\(How far do you figure we should go?)
+\item The finite region between the curves $x=y^2-2y$ and $y=x$.
+\end{enumerate}
+
+\end{document}

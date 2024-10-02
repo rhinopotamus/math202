@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{graphicx}
+  \DeclareGraphicsRule{*}{mps}{*}{}
+%\usepackage{bbm}
+\usepackage{marvosym}
+\usepackage{enumerate}
+\usepackage{txfonts}
+\usepackage{paralist}
+\usepackage{pdfpages}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\everymath{\displaystyle}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
+
+%\usepackage{showframe}
+
+\pagestyle{empty}
+
+\usepackage{fullpage}
+%% \addtolength{\hoffset}{-1.5cm}
+%% \addtolength{\textwidth}{3cm}
+
+%% \addtolength{\voffset}{-1.5cm}
+%% \addtolength{\textheight}{3cm}
+
+\setdefaultleftmargin{0pt}{}{}{}{}{}
+
+\newcommand{\vv}[2]{#1}
+
+\hyphenpenalty=5000
+\tolerance=1000
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+  \textbf{ Math 202 -- Slice, approximate, integrate: volumes of solids of revolution
+  --- Fall 2024
+    }
+\end{center}
+
+For each of the regions listed below:
+
+\begin{itemize}
+    \item Draw a graph of all the relevant curves. (Using Desmos or something is a good choice.)
+    \item Find the intersection points of the curves. (Using Desmos or something is a good choice.)
+    \item Shade in the region that's ``bounded by'' these curves.
+    \item Draw the axis of revolution and sketch the solid that results. (Do ur best; this is not an art class.)
+    \item Draw a representative slice perpendicular to the axis of revolution; revolve the slice.
+    \item Label the radius (radii?) of the slice and the thickness of the slice.
+    \item Use your labels to write an equation for $\Delta V$.
+\end{itemize}
+
+\vfill
+\href{https://activecalculus.org/single/sec-6-2-volume.html#act-6-2-1}{Activity 6.2.2} \hrulefill
+
+\begin{enumerate}[a.]
+\item The region bounded by the $x$-axis, $y=\sqrt{x}$, and $x=4$; revolve about the $x$-axis.
+\item The region bounded by the $y$-axis, $y=\sqrt{x}$, and $y=2$; revolve about the $x$-axis.
+\item The region bounded by $y=\sqrt{x}$ and $y=x^3$; revolve about the $x$-axis.
+\item The region bounded by $y=2x^2+1$ and $y=x^2 + 4$; revolve about the $x$-axis.
+
+%% I omitted part (e) because it's the first part of the next activity.
+
+\vfill
+
+\hspace{-1.5em} \href{https://activecalculus.org/single/sec-6-2-volume.html#act-6-2-2}{Activity 6.2.3} \hrulefill
+
+%(a)
+\item The region bounded by the $y$-axis, $y=\sqrt{x}$, and $y=2$; revolve about the $y$-axis.
+%(b)
+\item The region bounded by the $x$-axis, $y=\sqrt{x}$, and $x=4$; revolve about the $y$-axis.
+%(c)
+\item The region in the first quadrant bounded by $y=2x$ and $y=x^3$; revolve about the $x$-axis.
+%(d)
+\item The region in the first quadrant bounded by $y=2x$ and $y=x^3$; revolve about the $y$-axis.
+%(e)
+\item The region bounded by $x=(y-1)^2$ and $y=x-1$; revolve about the $y$-axis.
+
+\vfill
+
+\hspace{-1.5em} \href{https://activecalculus.org/single/sec-6-2-volume.html#act-6-2-3}{Activity 6.2.4} \hrulefill
+%(a)
+\item The region in the first quadrant bounded by $y=2x$ and $y=x^3$; revolve about the line $y=-2$.
+%(b)
+\item The same region, but revolve about the line $y=4$.
+%(c)
+\item The same region, but revolve about the line $x=-1$.
+%(d)
+\item The same region, but revolve about the line $x=5$.
+
+\end{enumerate}
+
+\end{document}

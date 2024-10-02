@@ -1,0 +1,100 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumitem,tikz, fancyhdr, wrapfig, textcomp, units, mathptmx, pdfpages, cancel, multicol}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
+
+\setlength{\headheight}{14.5pt}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\vw}{\mathbf{w}}
+\newcommand{\vi}{\mathbf{i}}
+\newcommand{\vj}{\mathbf{j}}
+\newcommand{\vk}{\mathbf{k}}
+\newcommand{\vn}{\mathbf{n}}
+\newcommand{\vr}{\mathbf{r}}
+\newcommand{\va}{\mathbf{a}}
+\newcommand{\vF}{\mathbf{F}}
+\newcommand{\vL}{\mathbf{L}}
+\newcommand{\vT}{\mathbf{T}}
+\newcommand{\vN}{\mathbf{N}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\orth}{\operatorname{orth}}
+\newcommand\del\nabla
+\newcommand\dotp[1][.5]{\,\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}\,}
+
+% Solution text is in red. If you want the solutions to show, remove the \iffalse from the definition of the \red command.
+%\newcommand{\red}[1]{ %\iffalse
+%	\textcolor{red}{#1} }%\fi}
+
+\newenvironment{red}{\color{red}}{\ignorespacesafterend}
+\newenvironment{blue}{\color{blue}}{\ignorespacesafterend}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\renewcommand{\section}[1]{\begin{center} \textbf{#1} \\\end{center}}
+%
+\hyphenpenalty=5000
+\setlength{\parindent}{0in}
+%\oddsidemargin=-.25in
+\allowdisplaybreaks
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{MATH 202}
+\rhead{Spring 2022}
+%\lfoot{\copyright\ CLEAR Calculus 2010}
+\cfoot{}
+
+\begin{document}
+%
+
+
+%\onehalfspacing
+\allowdisplaybreaks
+%##################################################################
+\section{PS\#4: Checkpoint Preview M1-M5 - \red{Answer key} }
+
+Because many of these problems are randomly generated, I can't write meaningful answer keys beyond the ``partial answers'' provided by Canvas. However, everyone got the same \#1, so here's an answer key for that.
+
+\everymath{\displaystyle}
+\begin{enumerate}[leftmargin=0pt]
+
+\item Consider the function $f(x)=e^{-x^2}$, which does not have an elementary antiderivative. Define the integral function $F(t) = \int_0^t f(x)\, dx$.
+
+\begin{enumerate}
+    \item What does the Second FTC tell us about the relationship between $F$ and $f$?
+    
+    \begin{red}
+    The Second FTC says that $F$ is an antiderivative of $f$ -- that is, that $F' = f$.
+    \end{red}
+    \item Use appropriate technology to approximate $F(2)$ using left, right, midpoint, and trapezoid sums with 10 subintervals. Explain which of these approximations are overestimates and which are underestimates.
+    
+    \begin{red}
+    I used the following commands in Geogebra to produce the following estimates. You can certainly use different technology as long as it produces the same calculations. After defining $f(x) = e^{-x^2}$:
+    
+    \begin{itemize}
+        \item Left sum: \texttt{RectangleSum(f(x),0,2,10,0)} $\approx 0.9800072469099$
+        \item Right sum: \texttt{RectangleSum(f(x),0,2,10,1)} $\approx 0.7836703746876$ 
+        \item Midpoint sum: \texttt{RectangleSum(f(x),0,2,10,0.5)} $\approx 0.8822020699923$
+        \item Trapezoid sum: \texttt{TrapezoidalSum(f(x),0,2,10)} $\approx 0.8818388107988$
+    \end{itemize}
+    \end{red}
+    \item Use the results from part B to approximate $F(2)$ using Simpson's rule.
+    
+    \begin{red}
+    Simpson's rule is the weighted average of the midpoint sum and the trapezoid sum:
+    
+    \begin{align*}
+        S_{20} &= \frac{2M_n + T_n}{3} 
+        = \frac{1}{3}(2 \cdot 0.8822020699923 + 0.8818388107988) \\
+        &= \frac{1}{3}( 2.64624295078 ) = 0.88208098359
+    \end{align*}
+    \end{red}
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,409 @@
+\documentclass[letter, 12pt]{article}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumerate,tikz, fancyhdr, wrapfig, textcomp, units, mathptmx, multicol}
+\hyphenpenalty=5000
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newenvironment{red}{ %\iffalse
+\color{red}}{\ignorespacesafterend
+} %\fi
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\renewcommand{\section}[1]{\begin{center} \textbf{#1} \\\end{center}}
+\newcommand{\diff}[1]{\frac{d}{d#1}}
+%
+\setlength{\parindent}{0in}
+%\oddsidemargin=-.25in
+\allowdisplaybreaks
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{Calculus II}
+\rhead{Spring 2024}
+%\lfoot{\copyright\ CLEAR Calculus 2010}
+\cfoot{}
+\renewcommand{\thefootnote}{*}
+
+\newcommand{\itx}[1]{\intertext{\begin{flushright}#1\end{flushright}}}
+
+\begin{document}
+\section{Derivatives Review Problems -- \begin{red}
+Solutions!
+\end{red}}
+
+\textbf{Instructions:} 
+In this Problem Set, you'll carefully solve one of these differentiation problems, then make a purposeful mistake somewhere. Follow these steps:
+\begin{enumerate}[(a)]
+	\item Choose one of the problems below.
+	\item Refer to the list on the next page to identify \textbf{all} the derivative rules you're going to need to use for your problem.
+	\item Carefully find the derivative \textbf{step by step}, write out \textbf{every step}, and list all the rules you used in each step. Please see the example on the next page to see how detailed your steps should be.
+	\item Choose a \textbf{second} problem, and do the same things, but make your answer wrong somehow. Bonus points\footnote{Points don't exist.} for an error you think people probably make in real life.
+\end{enumerate}
+Throughout, carefully label any derivative you find by name, using correct derivative notation.
+
+\hrulefill
+
+\begin{enumerate}[{\bf (1)}]
+\item
+Find $\frac{dy}{dx}$ if \(y=(2x-1)^8-x+e\).
+
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item constant multiple rule
+			\item sum and difference rule
+			\item power rule
+			\item chain rule
+		\end{itemize}
+	\end{multicols}
+	
+	\begin{align*}
+	\frac{dy}{dx} &= \diff{x}(2x-1)^8 - \diff{x}(x) + \diff{x}(e)
+	& \textrm{(sum and difference rule)} \\
+	&= 8(2x-1)^7\cdot\diff{x}(2x-1) - 1 + 0 
+	& \textrm{(chain rule, power rule)} \\
+	&= 8(2x-1)^7 \cdot (2 - 0) - 1 
+	& \textrm{(constant multiple rule, power rule)}
+	\end{align*}
+\end{red}
+ 
+\item 
+If \(L(y) = (\cos(y))^{3} + \cos(3)\), find $L'(y)$.
+
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item sum and difference rule
+			\item trig functions rule
+			\item power rule
+			\item chain rule
+		\end{itemize}
+	\end{multicols}
+	
+	\begin{align*}
+	L'(y) &= \diff{y}(\cos(y))^3 + \diff{y}\cos(3)
+	& \textrm{(sum and difference rule)} \\
+	&= 3(\cos(y))^2\cdot\diff{y}\cos(y) + 0
+	& \textrm{(chain rule, power rule)} \\
+	&= 3(\cos(y))^2\cdot(-\sin(y))
+	& \textrm{(trig functions rule)}
+	\end{align*}
+\end{red}
+ 
+\pagebreak
+
+\item
+Find $B'(x)$ if \(B(x) = \cos(e^{3 x})\).
+
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item chain rule
+			\item trig functions rule
+			\item exponential functions rule
+			\item constant multiple rule
+			\item power rule
+			\item[]
+		\end{itemize}
+	\end{multicols}
+	
+	\begin{align*}
+	B'(x) &= -\sin(e^{3x})\cdot\diff{x}(e^{3x})
+	& \textrm{(chain rule, trig functions rule)} \\
+	&= -\sin(e^{3x})\cdot e^{3x} \cdot \diff{x}(3x) 
+	& \textrm{(chain rule, exponential functions rule)} \\
+	&= -\sin(e^{3x})\cdot e^{3x} \cdot 3
+	& \textrm{(constant multiple rule, power rule)}
+	\end{align*}
+\end{red} 
+ 
+\item
+Differentiate \(W(x) =\displaystyle{x^4 - 6x + 10 \over \sqrt{7x + 8}}\).
+
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item quotient rule
+			\item sum and difference rule
+			\item power rule
+			\item constant multiple rule
+			\item chain rule
+			\item[]
+		\end{itemize}
+	\end{multicols}
+	
+	\begin{align*}
+	W'(x) &= \frac{(\sqrt{7x+8})\cdot\diff{x}(x^4-6x+10) 
+	               - (x^4-6x+10)\cdot\diff{x}(\sqrt{7x+8})}
+	              {(\sqrt{7x+8})^2} \\
+	\itx{(quotient rule)} 
+	&= \frac{(\sqrt{7x+8})\cdot(4x^3-6) 
+	               - (x^4-6x+10)\cdot(\tfrac{1}{2}(7x+8)^{-1/2}\cdot 7) }
+	              {(\sqrt{7x+8})^2} \\
+	\itx{(power rule, sum and difference rule, constant multiple rule, chain rule)}
+	\end{align*}
+\end{red}
+\pagebreak
+
+\item Differentiate \(g(q) = \displaystyle{q^{5} \over \ln(q + {1\over3})}\).
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item quotient rule
+			\item power rule
+			\item chain rule
+			\item logarithmic functions rule
+			\item sum and difference rule
+			\item[]
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	g'(q) &= \frac{(\ln(q+\tfrac{1}{3}))\cdot\diff{q}(q^5) - 
+	              (q^5)\cdot\diff{q}(\ln(q+\tfrac{1}{3}))}
+	              {(\ln(q+\tfrac{1}{3}))^2}
+	\itx{(quotient rule)} 
+	&= \frac{(\ln(q+\tfrac{1}{3}))\cdot(5q^4) - 
+	              (q^5)\cdot\left(\frac{1}{q+\tfrac{1}{3}}\cdot (1+0)\right)}
+	              {(\ln(q+\tfrac{1}{3}))^2} \\
+	\itx{(power rule, chain rule, log. functions rule, sum and difference rule)}
+	\end{align*}
+\end{red}
+
+
+\item
+Differentiate \(B(x) = (C e^{3x} - D)(2 x)\), where \(C\) and \(D\) are constants.
+
+\begin{red}
+    	\begin{multicols}{2}
+		\begin{itemize}
+			\item product rule
+			\item sum and difference rule
+			\item constant multiple rule
+			\item exponential functions rule
+			\item power rule
+			\item[]
+		\end{itemize}
+	\end{multicols}
+	
+	\begin{align*}
+	B'(x) &= \left(\diff{x}(C e^{3x} - D)\right)\cdot(2 x) + (C e^{3x} - D)\cdot\diff{x}(2 x) \\
+	\itx{(product rule)}
+	&= \left(C\cdot\diff{x}(e^{3x}) - \diff{x}(D)\right) \cdot(2x) + (C e^{3x} - D)\cdot(2) \\
+	\itx{(sum and difference rule, constant multiple rule, power rule)} \\
+	&= \left(C\cdot(e^{3x}\cdot(3)) - 0\right) \cdot(2x) + (C e^{3x} - D)\cdot(2) \\
+	\itx{(chain rule, exponential functions rule, constant multiple rule, power rule)}
+	\end{align*}
+\end{red}
+
+\item
+Differentiate \(f(y) = \left(\sqrt{y^4 + 1}\right) \left(\ln\left(\frac{y}{2}\right)\right)\).
+
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item product rule
+			\item chain rule
+			\item logarithmic functions rule
+			\item constant multiple rule
+			\item power rule
+			\item sum and difference rule
+			\item \textbf{NOT the quotient rule!!}
+			\item[]
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	f'(y) &= \left(\sqrt{y^4 + 1}\right)\cdot \diff{y} \left(\ln\left(\frac{y}{2}\right)\right)
+	      + \left[\diff{y}\left(\sqrt{y^4 + 1}\right)\right]\cdot 
+	      			\left(\ln\left(\frac{y}{2}\right)\right) \\
+	\itx{(product rule)}
+	&= \left(\sqrt{y^4 + 1}\right)\cdot \left(\frac{1}{y/2}\cdot\diff{y}\left(\frac{y}{2}\right)\right)
+	      + \left[\frac{1}{2}(y^4 + 1)^{-1/2}\cdot\diff{y}(y^4+1)\right]\cdot 
+	      			\left(\ln\left(\frac{y}{2}\right)\right) \\
+	\itx{(chain rule, logarithmic function rule, power rule)}
+	&= \left(\sqrt{y^4 + 1}\right)\cdot \left(\frac{1}{y/2}\cdot\left(\frac{1}{2}\right)\right)
+	      + \left[\frac{1}{2}(y^4 + 1)^{-1/2}\cdot(4y^3+0)\right]\cdot 
+	      			\left(\ln\left(\frac{y}{2}\right)\right) \\
+	\itx{(constant multiple rule, power rule, sum and difference rule)}
+	\end{align*}
+
+\end{red}
+\pagebreak
+
+\item
+Find $\frac{dB}{dx}$ if 
+\(B =\displaystyle{e^{x + \pi} \over \sin(\pi x)}\).
+\begin{red}
+    \begin{multicols}{2}
+		\begin{itemize}
+			\item quotient rule
+			\item chain rule
+			\item exponential functions rule
+			\item sum and difference rule
+			\item power rule
+			\item trig functions rule
+			\item constant multiple rule
+			\item[]
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	\frac{dB}{dx} &= \frac{(\sin(\pi x))\cdot\diff{x}(e^{x + \pi}) 
+	               - (e^{x + \pi})\cdot\diff{x}(\sin(\pi x))}
+	              {(\sin(\pi x))^2} \\
+	\itx{(quotient rule)}
+	&= \frac{(\sin(\pi x))\cdot(e^{x + \pi}\cdot(1+0)) 
+	               - (e^{x + \pi})\cdot(\cos(\pi x)\cdot\pi)}
+	              {(\sin(\pi x))^2} \\
+	\itx{(chain rule, exponential functions rule, sum and difference rule, \\ 
+	power rule, trig functions rule, constant multiple rule)}
+	\end{align*}
+\end{red}
+
+
+
+\item 
+Differentiate \(h(p) = \displaystyle{(2 p - 1)^{1/4} \over \cos(p + 5)}\).
+
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item quotient rule
+			\item chain rule
+			\item power rule
+			\item constant multiple rule
+			\item sum and difference rule
+			\item trig functions rule
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	h'(p) &= \frac{\cos(p + 5)\cdot\diff{p}((2 p - 1)^{1/4}) 
+	               - ((2 p - 1)^{1/4})\cdot\diff{p}(\cos(p + 5))}
+	              {(\cos(p + 5))^2} \\
+	\itx{(quotient rule)}
+	&= \frac{\cos(p + 5)\cdot\left[\frac{1}{4}(2 p - 1)^{-3/4}\cdot(2-0)\right] 
+	               - ((2 p - 1)^{1/4})\cdot\diff{p}(\cos(p + 5))}
+	              {(\cos(p + 5))^2} \\
+	\itx{(chain rule, power rule, sum and difference rule)}
+	&= \frac{\cos(p + 5)\cdot\left[\frac{1}{4}(2 p - 1)^{-3/4}\cdot(2-0)\right] 
+	               - ((2 p - 1)^{1/4})\cdot(-\sin(p + 5)\cdot 1)}
+	              {(\cos(p + 5))^2} \\
+	\itx{(chain rule, trig functions rule, power rule)}
+	\end{align*}
+\end{red}
+
+\item
+Differentiate \(f(q)=(\cos q)\cdot (\sin (\tfrac{2}{\pi} q)) \).
+
+\begin{red}
+    \begin{multicols}{2}
+		\begin{itemize}
+			\item product rule
+			\item trig functions rule
+			\item chain rule
+			\item constant multiple rule
+			\item power rule
+			\item
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	f'(q) &= \left[\diff{q}(\cos(q))\right] \cdot (\sin (\tfrac{2}{\pi} q))
+		+ (\cos(q)) \cdot \diff{q} (\sin (\tfrac{2}{\pi} q)) \\
+	\itx{(product rule)}
+	&= (-\sin(q)) \cdot (\sin (\tfrac{2}{\pi} q))
+		+ (\cos(q)) \cdot (\cos (\tfrac{2}{\pi} q) \cdot \tfrac{2}{\pi}) \\
+	\itx{(trig functions rule, chain rule, constant multiple rule, power rule)}		
+	\end{align*}
+\end{red}
+
+\pagebreak
+
+\item
+Differentiate \(G = p x^5 + q x^3 - x^r\), where \(p,q\) and \(r\)
+are constants.
+\begin{red}
+    	\begin{multicols}{2}
+		\begin{itemize}
+			\item sum and difference rule
+			\item constant multiple rule
+			\item power rule
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	\frac{dG}{dx} &= p\cdot\diff{x}(x^5) + q\cdot\diff{x}(x^3) - \diff{x}(x^r)
+	& \textrm{(sum and difference rule, constant multiple rule)}\\
+	&&\\
+	&= 5p x^4 + 3q x^2 - rx^{r-1} 
+	& \textrm{(power rule)}
+	\end{align*}
+\end{red}
+
+\item
+Differentiate \(V = (3 x - \tfrac{1}{4})^{-4} - (5x)^{5/4}\).
+\begin{red}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item sum and difference rule
+			\item chain rule
+			\item power rule
+			\item constant multiple rule
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	\frac{dV}{dx} &= \diff{x}\left[(3 x - \tfrac{1}{4})^{-4}\right] - \diff{x}\left[(5x)^{5/4}\right] \\
+	\itx{(sum and difference rule)}
+	&= -4(3 x - \tfrac{1}{4})^{-5} \cdot (3-0) - \tfrac{5}{4} (5x)^{1/4} \cdot 5 \\
+	\itx{(chain rule, power rule, sum and difference rule, constant multiple rule)}
+	\end{align*}
+\end{red}
+\pagebreak
+
+\item
+Differentiate \(h(x) = \sqrt{e^{6 x}}\).
+\begin{red}
+    \begin{multicols}{2}
+		\begin{itemize}
+			\item chain rule
+			\item power rule
+			\item exponential functions rule
+			\item constant multiple rule
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	h'(x) &= \tfrac{1}{2}(e^{6x})^{-1/2} \cdot\diff{x}(e^{6x}) &
+	\textrm{(chain rule, power rule)}\\
+	&= \tfrac{1}{2}(e^{6x})^{-1/2} \cdot (e^{6x} \cdot \diff{x}(6x)) &
+	\textrm{(chain rule, exponential functions rule)}\\
+	&= \tfrac{1}{2}(e^{6x})^{-1/2} \cdot (e^{6x} \cdot 6) &
+	\textrm{(constant multiple rule, power rule)}\\
+	\end{align*}
+	(\textbf{Note:} There's another way to do this one. Note that $h(x) = \left[e^{6x}\right]^{1/2}
+	= e^{\frac{6}{2}x} = e^{3x}$. \\
+	 Then $h'(x) = 3e^{3x}$. Check that this is the same as the other answer above!
+\end{red}
+	
+\item
+Differentiate \(h(t) = -3(2t^4 + 7)^4 + 3\).
+\begin{red}
+    \begin{multicols}{2}
+		\begin{itemize}
+			\item sum and difference rule
+			\item constant multiple rule
+			\item chain rule
+			\item power rule
+		\end{itemize}
+	\end{multicols}
+	\begin{align*}
+	h'(t) &= -3\diff{t}(2t^4 + 7)^4 + \diff{t}(3) \\
+	\itx{(sum and difference rule, constant multiple rule)}
+	&= -3\left[4(2t^4+7)^3\cdot\diff{t}(2t^4+7)\right] + 0 \\
+	\itx{(chain rule, power rule)}
+	&= -3\left[4(2t^4+7)^3\cdot(8t^3 + 0)\right] \\
+	\itx{(sum and difference rule, constant multiple rule, power rule)}
+	\end{align*}
+\end{red}
+	
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumerate,tikz, fancyhdr, wrapfig, textcomp, units, mathptmx}
+
+\setlength{\headheight}{14.5pt}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\renewcommand{\section}[1]{\begin{center} \textbf{#1} \\\end{center}}
+%
+\setlength{\parindent}{0in}
+%\oddsidemargin=-.25in
+\allowdisplaybreaks
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{MATH 202}
+\rhead{Spring 2022}
+\lfoot{\copyright\ CLEAR Calculus 2010}
+\cfoot{}
+\renewcommand{\thefootnote}{*} 
+\hyphenpenalty=10000
+\begin{document}
+%
+
+
+%\onehalfspacing
+\allowdisplaybreaks
+%##################################################################
+\section{Physics applications of definite integrals}
+\textbf{Get started:} Choose two of the problems below. For both problems: 
+\begin{enumerate}[\quad A.]
+\item Draw a picture of your chosen context. 
+\item Explain why you can't just perform a simple multiplication to compute the requested quantity (thus necessitating a definite integral).
+\item We're interested in slicing the picture of your context into regions on which the relevant non-constant quantities are approximately constant (so that you \textit{can} just perform a simple multiplication to compute the requested quantity). Draw one representative of such a region on your picture from part A.
+\end{enumerate}
+
+\textbf{Instructions:} Work with your group on the problem you chose.
+\begin{enumerate}
+\item The kinetic energy of an object with mass \(m\) and constant speed \(v\) is \(K = \frac{1}{2} mv^2\), at least in the case where the entire object is moving at the same speed. Suppose a 0.1 m long rod has a mass of 0.03 kg with uniform density. It is rotating around one of its ends at a rate of one revolution per minute, much like the second hand of a clock. 
+\begin{enumerate}[(a)]
+\item Draw a picture of a representative slice on which the relevant non-constant quantity is approximately constant. 
+\item Compute an approximation of the kinetic energy of a representative slice.
+\item Write a definite integral that gives the kinetic energy of the rod in Joules (kg\(\cdot\) m\(^2\)/s\(^2\)).
+\item Evaluate the integral, assign it the proper units, and explain the meaning of your result.
+\item Describe the meaning of each factor of your integral, and give its units.
+\end{enumerate}
+\item The density of oil in a circular oil slick on the surface of the ocean at a distance r meters from the center of the slick is given by \(\delta(r) = \frac{50}{1 + r}\) kg/m\(^2\).
+\begin{enumerate}[(a)]
+\item Draw a picture of a representative slice on which the relevant non-constant quantity is approximately constant. 
+\item Compute an approximation of the mass of a representative slice.
+\item If the slick extends from \(r = 0\) to \(r = 10,000\) m, write a definite integral that gives the total mass of oil in the slick.
+\item Evaluate the integral, assign it the proper units, and explain the meaning of your result.\\
+Hint: $\dfrac{r}{1+r} = 1 - \dfrac{1}{1+r}$ -- check!
+\item Describe the meaning of each factor of your integral, and give its units.
+\end{enumerate}
+
+\pagebreak
+\item The force of gravity that the earth exerts on an object diminishes as the object gets further away from the earth. The energy required to lift an object 1 foot at sea level is greater than the energy required to lift the same object 1 foot at the top of Mt. Everest. However, the difference in altitudes is so small in comparison to the radius of the earth that the difference in energy is negligible. On the other hand, when an object is rocketed into space, the fact that the force of gravity diminishes with distance from the center of the earth is critical. According to Newton, the force of gravity on a given mass is proportional to the reciprocal of the square of the distance of that mass from the center of the earth. That is, for some constant \(k\), the gravitational force at distance \(r\) from the center of the earth is given by 
+\[ F(r) = \frac{k}{r^2}.\]
+The energy required to move an object a distance \(d\) is \(E = F\cdot d\), if the force is constant over the distance \(d\).  
+\begin{enumerate}[(a)]
+\item Draw a picture of a representative slice on which the relevant non-constant quantity is approximately constant. 
+\item Compute an approximation of the energy required to move through a representative slice.
+\item Write a definite integral that gives the energy in Joules (1 J = 1 N$\cdot$m) required to lift a 1-kg payload from the surface of the earth to the moon, which is about 362,570 km away at its closest point.
+\item Evaluate the integral, assign it the proper units, and explain the meaning of your result.\\
+(Hint: The earth's surface is at a distance of 6,371 km from its center. At this value of \(r\), the force of gravity on the 1 kg object is 9.8 N. Use this to determine the constant \(k\).)
+\item Describe the meaning of each factor of your integral, and give its units.
+\end{enumerate}
+\item The energy required to move an object a distance \(x\) while exerting a constant force \(F\) is \(E = Fx\).  Suppose that you have two magnets and a wire. One magnet is attached to the end of the wire and the other can slide along the wire. If the magnets are arranged so that they repel each other, then it will require force to push the movable magnet toward the fixed magnet. The amount of force needed to move the magnet increases as the two get closer together. In fact, the force at a distance \(x\) is proportional to \(1/x^2\); that is, for some constant $k$, the force at a distance $x$ is $k\cdot 1/x^2$.
+\begin{enumerate}[(a)]
+\item Draw a picture of a representative slice on which the relevant non-constant quantity is approximately constant. 
+\item Compute an approximation of the energy required to move through a representative slice.
+\item Write a definite integral that gives the energy required to move the magnet from 5 cm away to 3 cm away in Joules (kg\(\cdot\)m\(^2\)/s\(^2\)), and evaluate the integral (your answer will depend on \(k\)).
+\item Evaluate the integral, assign it the proper units, and explain the meaning of your result.
+\item Describe the meaning of each factor of your integral, and give its units.
+\end{enumerate}
+\item An exponential model for the density of the earth's atmosphere says that if the temperature of the atmosphere were constant, then the density of the air as a function of height, \(h\) (in meters), above the surface of the earth would be given by
+\[ \delta(h) = 1.28 e^{-0.000124 h} \text{ kg/m}^3.\]
+\begin{enumerate}[(a)]
+\item Draw a picture of a representative slice on which the relevant non-constant quantity is approximately constant. 
+\item Compute an approximation of the mass of a representative slice.
+\item Write a definite integral that gives the mass of the portion of the atmosphere from \(h = 0\) to  \(h = 100\) m (i.e., the first 100 meters above sea level). Assume the radius of the earth is 6400 km. Use a computer algebra system such as Wolfram Alpha or Geogebra to find an antiderivative.
+\item Evaluate the integral, assign it the proper units, and explain the meaning of your result.
+\item Describe the meaning of each factor of your integral, and give its units.
+\end{enumerate}
+\item The gravitational attraction between two particles of mass \(m_1\) and \(m_2\) at a distance \(r\) apart is
+\[F(r) = \frac{Gm_1 m_2}{r^2}.\]
+We'll use this to find the gravitational attraction between a thin uniform rod of mass $M$ and length $l$ and a particle of mass $m$ lying in the same line as the rod at a distance $a$ from one end.
+\begin{enumerate}[(a)]
+\item Draw a picture of a representative slice on which the relevant non-constant quantity is approximately constant. 
+\item Compute an approximation of the gravitational force exerted by a representative slice.
+\item Write a definite integral that that gives the gravitational attraction between a thin uniform rod of mass \(M\) and length \(l\) and a particle of mass \(m\) lying in the same line as the rod at a distance a from one end.
+\item Evaluate the integral, assign it the proper units, and explain the meaning of your result.
+\item Describe the meaning of each factor of your integral, and give its units.
+\end{enumerate}
+\end{enumerate}
+%#####################################d############################
+\end{document}
