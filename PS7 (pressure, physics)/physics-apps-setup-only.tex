@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
-\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumerate,tikz, fancyhdr, wrapfig, textcomp, units, mathptmx, siunitx}
+\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumerate,tikz, fancyhdr, wrapfig, textcomp, mathptmx, siunitx}
 \usepackage{pdfpages}
 \usepackage{enumitem}
 
@@ -9,10 +9,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 
-% Solution text is in red. If you want the solutions to show, uncomment this line:
-\newcommand{\red}[1]{ \textcolor{red}{#1 } }
-% If you want the solutions hidden, uncomment this line:
-% \newcommand{\red}[1]{ \iffalse \textcolor{red}{#1 } \fi }
+\newenvironment{red}{\color{red}}{\ignorespacesafterend}
 
 
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
@@ -37,40 +34,74 @@
 %\onehalfspacing
 \allowdisplaybreaks
 %##################################################################
-\section{Physics applications of definite integrals}
+\section{Physics applications of definite integrals: Just the setups}
 
 Here are a bunch of situations where we want to calculate something by multiplying some stuff together, but it doesn't work because one of those things isn't constant.  Here is a generic list of steps by which we can figure out what to do.
 \begin{itemize}[leftmargin=10pt]
     \item Draw a picture.
     \item What's not constant?
     \begin{itemize}
-        \item What is it a function of?
+        \item What is it a function of? Label that thing in your picture.
     \end{itemize}
-    \item How shall we slice into regions where that thing is approximately constant?
+    \item How shall we slice into small regions where that thing is approximately constant?
     \item Draw such a slice on your picture.
+    \item Label your slice with a \(\Delta\)\rule{0.5cm}{0.15mm} that indicates what it is that's ``small'' here.
 \end{itemize}
+Here's an example that's familiar from our work in class: the leaky bucket problem. I'm hauling a bucket of water up out of a well, which requires a certain amount of work. If a constant force is applied to move an object a distance \(d\), then the work done is \(W = F \cdot d\). However, the bucket is leaky (otherwise it wouldn't fill up at the bottom of the well!), so the weight of the bucket (and thus the force that's required to lift it) is a decreasing function of height. I'd like to know the total amount of work I need to exert to lift the bucket out of the well.
+
+\begin{minipage}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{../images/leaky-bucket.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \begin{itemize}[leftmargin=10pt]
+        \item Draw a picture.
+        \item What's not constant? 
+
+        \begin{red} 
+            The force required to lift the bucket.
+        \end{red}
+        \begin{itemize}
+            \item What is it a function of?
+
+            \begin{red}
+                The height \(h\), which is labeled in the picture.
+            \end{red}
+        \end{itemize}
+        \item How shall we slice into small regions where that thing is approximately constant?
+
+        \begin{red}
+            Horizontally!
+        \end{red}
+        \item Draw such a slice on your picture.
+        \item Label your slice with a \(\Delta\)\rule{0.5cm}{0.15mm} that indicates what it is that's ``small'' here.
+
+        \begin{red}
+            I've labeled the slice with a \(\Delta h\). 
+            
+            Notice that the thing labeled \(h\) and the thing labeled \(\Delta h\) help me see that \(\Delta h\) is a ``small'' version of \(h\).
+        \end{red}
+    \end{itemize}
+\end{minipage}
 
 Let's practice applying those steps in a bunch of different situations!
 
-\hrulefill
+\pagebreak
 
 \begin{enumerate}[leftmargin=0pt]
-\item The kinetic energy of an object with mass \(m\) and constant speed \(v\) is \(K = \frac{1}{2} mv^2\), at least in the case where the entire object is moving at the same speed. Suppose a 0.1 m long rod has a mass of 0.03 kg with uniform density. It is rotating around one of its ends at a rate of one revolution per minute, much like the second hand of a clock. I'd like to know the total kinetic energy of this object.
-\item The density of oil in a circular oil slick on the surface of the ocean at a distance r meters from the center of the slick is given by \(\rho(r) = \frac{50}{1 + r}\) kg/m\(^2\). I'd like to know the total mass of oil in this oil slick.
+\item The kinetic energy of an object with mass \(m\) and constant speed \(v\) is \(K = \frac{1}{2} mv^2\), at least in the case where the entire object is moving at the same speed. Picture the second hand of a clock: it's a rod with a certain length and a certain mass, and it is rotating around one of its ends at a rate of one revolution per minute. I'd like to know the total kinetic energy of this object.
 
-\item The force of gravity that the earth exerts on an object diminishes as the object gets further away from the earth. The energy required to lift an object 1 foot at sea level is greater than the energy required to lift the same object 1 foot at the top of Mt. Everest. However, the difference in altitudes is so small in comparison to the radius of the earth that the difference in energy is negligible. On the other hand, when an object is rocketed into space, the fact that the force of gravity diminishes with distance from the center of the earth is critical. According to Newton, the force of gravity is governed by an ``inverse square law:'' for some constant \(k\), the gravitational force at distance \(r\) from the center of the earth is given by 
+\item Picture an oil slick on the surface of the ocean. It's probably roughly a circle, and the oil is probably denser in the center than it is at the edges. So the density of oil is probably given by some decreasing function \(\rho(r)\), where \(r\) is the distance from the center of the slick, and the units of this density function are probably like kg/m\(^2\). I'd like to know the total mass of oil in this oil slick.
+
+\item The force of gravity that the earth exerts on an object diminishes as the object gets further away from the earth. Specifically, according to Newton, the force of gravity is governed by an ``inverse square law:'' for some constant \(k\), the gravitational force at distance \(r\) from the center of the earth is given by 
 \[ F(r) = \frac{k}{r^2}.\]
 The energy required to move an object a distance \(d\) is \(E = F\cdot d\), if the force is constant over the distance \(d\).  I'd like to know the total energy necessary to launch an object all the way to the moon.
 
-\pagebreak
+\item The energy required to move an object a distance \(x\) while exerting a constant force \(F\) is \(E = F\cdot x\).  Suppose that you have two magnets and a wire. One magnet is attached to the end of the wire and the other can slide along the wire. If the magnets are arranged so that they repel each other, then it will require force to push the movable magnet toward the fixed magnet. The amount of force needed to move the magnet increases as the two get closer together. In fact, the force at a distance \(x\) is proportional to \(1/x^2\); that is, for some constant $k$, the force at a distance $x$ is $k\cdot 1/x^2$. I'd like to know the total energy needed to push the movable magnet a certain distance toward the fixed magnet.
 
-\item The energy required to move an object a distance \(x\) while exerting a constant force \(F\) is \(E = Fx\).  Suppose that you have two magnets and a wire. One magnet is attached to the end of the wire and the other can slide along the wire. If the magnets are arranged so that they repel each other, then it will require force to push the movable magnet toward the fixed magnet. The amount of force needed to move the magnet increases as the two get closer together. In fact, the force at a distance \(x\) is proportional to \(1/x^2\); that is, for some constant $k$, the force at a distance $x$ is $k\cdot 1/x^2$. I'd like to know the total energy needed to push the movable magnet a certain distance toward the fixed magnet.
-\item An exponential model for the density of the earth's atmosphere says that if the temperature of the atmosphere were constant, then the density of the air as a function of height, \(h\) (in meters), above the surface of the earth would be given by
-\[ \rho(h) = 1.28 e^{-0.000124 h} \text{ kg/m}^3.\]
-I'd like to know the total mass of the atmosphere.
+\item Consider the atmosphere: it's quite thick at ground level, but thins out as you get higher and higher, until you get to space and it's basically nothing. Therefore, the density of the atmosphere, in kg/m\(^3\), is probably a decreasing function of height above the surface of the earth. I'd like to know the total mass of the atmosphere.
 
 \item The gravitational attraction between two particles of mass \(m_1\) and \(m_2\) at a distance \(r\) apart is
 \[F(r) = \frac{Gm_1 m_2}{r^2}.\]
-We'll use this to find the gravitational attraction between a thin uniform rod of mass $M$ and length $l$ and a particle of mass $m$ lying in the same line as the rod at a distance $a$ from one end.
+Picture a thin uniform rod with a certain mass and a certain length, and then a particle some distance away that's along the same line as the rod. (I am imagining a pool cue hitting a pool ball.) I'd like to know the total gravitational force between the rod and the particle.
 \end{enumerate}
 \end{document}
