@@ -83,7 +83,7 @@ The energy required to move an object a distance \(d\) is \(E = F\cdot d\), meas
     \item Draw a representative small slice where that quantity is approximately constant. Label that slice with a \(\Delta\)\rule{0.5cm}{0.15mm}.
     \item Write an equation for \(\Delta E\) for that slice.
     \item Write a definite integral that gives the total energy \(E\) needed for the entire launch. The distance from the surface of the earth to the surface of the moon is about \(362{,}000\unit{\km}\).
-    \item Let's figure out the right value for \(k\). Our CubeSat has mass 2 kg, and at the surface of the earth (\(r = \qty{6371}{\km}\)), the force of gravity on the CubeSat is \(\qty{19.6}{\N}\).
+    \item Let's figure out the right value for \(k\). Our CubeSat has mass 2 kg, and at the surface of the earth (\(r = \qty{6371}{\km}\)), the force of gravity on the CubeSat is \(\qty{2}{\kg}\cdot\qty{9.8}{\m/\s^2} = \qty{19.6}{\N}\).
     \item Evaluate the integral, assign it the proper units, and explain the meaning of your result.
     \item Describe the meaning of each factor of your integral, and give its units.
 \end{enumerate}
@@ -95,25 +95,25 @@ The energy required to move an object a distance \(d\) is \(E = F\cdot d\), meas
     \item Draw a representative small slice where that quantity is approximately constant. Label that slice with a \(\Delta\)\rule{0.5cm}{0.15mm}.
     \item Write an equation for \(\Delta E\) for that slice.
     \item Write a definite integral that gives the total energy \(E\) needed to push the magnet from 5 cm away to 3 cm away. 
-    \item Evaluate the integral, assign it the proper units, and explain the meaning of your result. Your answer will depend on \(k\).
+    \item Evaluate the integral, assign it the proper units, and explain the meaning of your result. Your answer will involve the constant \(k\), which we don't have enough information to figure out. (What information would we need?)
     \item Describe the meaning of each factor of your integral, and give its units.
 \end{enumerate}
 
-\item Consider the atmosphere: it's quite thick at ground level, but thins out as you get higher and higher, until you get to space and it's basically nothing. I'd like to know the total mass of the atmosphere; it turns out that a good model for the density of the atmosphere as a function of height \(h\) (measured in meters) is
+\item Consider the atmosphere: it's quite thick at ground level, but thins out as you get higher and higher, until you get to space and it's basically nothing. I'd like to know the total mass of the atmosphere; it turns out that a good model for the density of the atmosphere as a function of height \(h\) (measured in meters up from sea level) is
 \[ \rho(h) = 1.28 e^{-0.000124 h}\, \unit{\kg/\m^3}.\]
 \begin{enumerate}[(a)]
     \item Draw a picture.
     \item Which quantity in the formula for mass isn't constant throughout your picture? What quantity does it depend on? Label that quantity in your picture.
     \item Draw a representative small slice where that quantity is approximately constant. Label that slice with a \(\Delta\)\rule{0.5cm}{0.15mm}.
-    \item Write an equation for \(\Delta M\) for that slice.
+    \item Write an equation for \(\Delta M\) for that slice. \textbf{Be careful:} your equation will probably depend on \(r\), which is not the same as \(h\).
     \item Write a definite integral that gives the total mass \(M\) of the atmosphere all the way out to the ``Kármán line'' of \(\qty{83.8}{\km}\) above sea level, which is the highest height theoretically achievable by an aircraft. (Note: the earth's radius is about \(\qty{6300}{km}\).)
     \item Evaluate the integral (use Wolfram Alpha or something), assign it the proper units, and explain the meaning of your result.
     \item Describe the meaning of each factor of your integral, and give its units.
 \end{enumerate}
 
-\item The gravitational attraction between two particles of mass \(m_1\) and \(m_2\) at a distance \(r\) apart is
+\item The gravitational attraction between two \textbf{particles} of mass \(m_1\) and \(m_2\) at a distance \(r\) apart is
 \[F(r) = \frac{Gm_1 m_2}{r^2}.\]
-Picture a thin uniform rod with mass \(M\) and length \(\ell\), and then a particle of mass \(m\) that's \(a\) meters away from the end of the rod. (I am imagining a pool cue hitting a pool ball.) I'd like to know the total gravitational force between the rod and the particle.
+Picture a thin uniform rod with mass \(M\) and length \(\ell\), and then a particle of mass \(m\) that's \(a\) meters away from the end of the rod. (I am imagining a pool cue hitting a pool ball.) I'd like to know the total gravitational force between the rod and the particle; \textbf{the problem is that the rod is not a particle.}
 \begin{enumerate}[(a)]
     \item Draw a picture.
     \item Which quantity in the formula for force isn't constant throughout your picture? What quantity does it depend on? Label that quantity in your picture.
@@ -121,7 +121,6 @@ Picture a thin uniform rod with mass \(M\) and length \(\ell\), and then a parti
     \item Write an equation for \(\Delta F\) for that slice.
     \item Write a definite integral that gives the total force \(F\) between the rod and the particle.
     \item Evaluate the integral (your answer will involve lots of letters), assign it the proper units, and explain the meaning of your result.
-    \item Describe the meaning of each factor of your integral, and give its units.
 \end{enumerate}
 
 \end{enumerate}
