@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumitem,tikz, fancyhdr, wrapfig, textcomp, units, mathptmx, pdfpages, cancel, multicol}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
+
+\setlength{\headheight}{14.5pt}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\vw}{\mathbf{w}}
+\newcommand{\vi}{\mathbf{i}}
+\newcommand{\vj}{\mathbf{j}}
+\newcommand{\vk}{\mathbf{k}}
+\newcommand{\vn}{\mathbf{n}}
+\newcommand{\vr}{\mathbf{r}}
+\newcommand{\va}{\mathbf{a}}
+\newcommand{\vF}{\mathbf{F}}
+\newcommand{\vL}{\mathbf{L}}
+\newcommand{\vT}{\mathbf{T}}
+\newcommand{\vN}{\mathbf{N}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\orth}{\operatorname{orth}}
+\newcommand\del\nabla
+\newcommand\dotp[1][.5]{\,\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}\,}
+\newcommand{\slice}{_\text{slice}}
+
+% Solution text is in red. If you want the solutions to show, remove the \iffalse from the definition of the \red command.
+%\newcommand{\red}[1]{ %\iffalse
+%	\textcolor{red}{#1} }%\fi}
+
+\newenvironment{red}{\color{red}}{\ignorespacesafterend}
+\newenvironment{blue}{\color{blue}}{\ignorespacesafterend}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\renewcommand{\section}[1]{\begin{center} \textbf{#1} \\\end{center}}
+\renewcommand{\subsection}[1]{\textbf{#1} \\}
+%
+\hyphenpenalty=5000
+\setlength{\parindent}{0in}
+\setlength{\parskip}{3pt plus1pt minus1pt}
+%\oddsidemargin=-.25in
+\allowdisplaybreaks
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{MATH 202}
+\rhead{Spring 2024}
+%\lfoot{\copyright\ CLEAR Calculus 2010}
+\cfoot{}
+
+\begin{document}
+%
+
+
+%\onehalfspacing
+\allowdisplaybreaks
+%##################################################################
+\section{Improvements to Euler's method}
+
+In class we explored the idea that original flavor Euler's method is analogous to a left Riemann sum. (In general it is more complicated, since the recipe for $dy/dt$ may involve both $y$ and $t$, whereas for a Riemann sum, the recipe for heights definitely only involves $t$.) We then thought about possible improvements to Euler's method, inspired by improvements to left Riemann sums. I'm going to show you what each of the tables might look like for each of these methods; your job would be to figure out how to calculate things like ``right slope'' or ``middle slope.'' I'm including some extra columns to give some hints about those new columns.
+
+(Do you ever write some word like ``slope'' so many times in a row that it starts looking like it shouldn't be a word? lol)
+
+\subsection{Original flavor Euler's method}
+\[
+    \begin{array}{|l|l|l|l|} 
+    \hline
+    t & 
+    y & 
+    \textrm{slope } & 
+    \Delta y = \textrm{slope}\cdot\Delta t \\\hline
+    0                   & & & \\\hline
+    0.2                 & & & \\\hline
+    0.4                 & & & \\\hline
+    0.6                 & & & \\\hline
+    0.8                 & & & \\\hline
+    1.0                 & & & \\\hline
+    \end{array}
+\]
+
+\subsection{``Improved Euler's method'' aka ``Heun's method'' aka ``explicit trapezoidal rule''}
+\[
+    \begin{array}{|l|l|l|l|l|l|l|l|l|} 
+    \hline
+    t & 
+    y & 
+    \textbf{left} \textrm{ slope } &
+    \Delta y &
+    \textbf{Euler } y &
+    \textbf{next } t &
+    \textbf{right} \textrm{ slope } &
+    \textbf{avg} \textrm{ slope } & 
+    \Delta y = (\textrm{avg slope})\cdot\Delta t       \\\hline
+    0                   & & & & & & & & \\\hline
+    0.2                 & & & & & & & & \\\hline
+    0.4                 & & & & & & & & \\\hline
+    0.6                 & & & & & & & & \\\hline
+    0.8                 & & & & & & & & \\\hline
+    1.0                 & & & & & & & & \\\hline
+    \end{array}
+\]
+
+\subsection{Midpoint method}
+\[
+    \begin{array}{|l|l|l|l|l|l|l|l|} 
+    \hline
+    t & 
+    y & 
+    \textrm{ slope } &
+    \textbf{half } \Delta y &
+    \textbf{middle } y &
+    \textbf{middle } t &
+    \textbf{middle} \textrm{ slope } & 
+    \Delta y = (\textrm{middle slope})\cdot\Delta t       \\\hline
+    0                   & & & & & & & \\\hline
+    0.2                 & & & & & & & \\\hline
+    0.4                 & & & & & & & \\\hline
+    0.6                 & & & & & & & \\\hline
+    0.8                 & & & & & & & \\\hline
+    1.0                 & & & & & & & \\\hline
+    \end{array}
+\]
+
+\end{document}
