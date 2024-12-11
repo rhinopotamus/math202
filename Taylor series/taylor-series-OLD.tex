@@ -1,0 +1,105 @@
+\input{../header}
+
+\begin{document}
+%
+
+
+%\onehalfspacing
+\allowdisplaybreaks
+%##################################################################
+\section{PS\#12 - Taylor series - \red{Answer key} }
+
+\everymath{\displaystyle}
+\begin{enumerate}[leftmargin=0pt]
+
+\item (\href{https://activecalculus.org/single/sec-8-5-taylor.html#GLb}{AC 8.5 Exercise 7}) The examples we have considered in this section have all been for Taylor polynomials and series centered at $0$, but Taylor polynomials and series can be centered at any value of $a$. We look at examples of such Taylor polynomials in this exercise.
+\begin{enumerate}
+    \item Let $f(x) = \sin(x)$.Find the Taylor polynomials up through order four of $f$ centered at $x=\tfrac\pi2$. Then find the Taylor series for $f(x)$ centered at $x=\tfrac\pi2$. Why does your result make sense?
+    
+    \begin{red}
+    We're going to take some derivatives and then we're going to plug in $x=\tfrac\pi2$ and build up Taylor polynomials:
+    \[\begin{array}{|l|l|l|l|}
+    \hline
+    n & f^{(n)}(x) & f^{(n)}(a)             & P_n(x)                        \\ \hline
+    0 & \sin(x)    & \sin\left(\frac\pi2\right) = 1   & 1                             \\ \hline
+    1 & \cos(x)    & \cos\left(\frac\pi2\right) = 0   & 1 + 0 (x-\tfrac\pi2)                  \\ \hline
+    2 & -\sin(x)   & -\sin\left(\frac\pi2\right) = -1 & 1-\frac{(x-\tfrac\pi2)^2}{2!} \\ \hline
+    3 & -\cos(x)   & -\cos\left(\frac\pi2\right) = 0  & 1-\frac{(x-\tfrac\pi2)^2}{2!} + 0(x-\tfrac\pi2)^3 \\ \hline
+    4 & \sin(x)    & \sin\left(\frac\pi2\right) = 1  & 1-\frac{(x-\tfrac\pi2)^2}{2!}+\frac{(x-\tfrac\pi2)^4}{4!} \\ \hline
+    \end{array}\]
+    Well hey, that's exactly the series for $\cos(x)$ but with $(x-\tfrac\pi2)$ plugged in instead of $x$:
+    \[\sin(x) = \sum_{k=0}^{\infty} \frac{(-1)^k (x-\tfrac\pi2)^{2k}}{(2k)!}\]
+    This makes sense because the graph of the cosine function is indeed a horizontal shift of the graph of the sine function: $\cos\left(x-\frac\pi2\right) = \sin(x)$.
+    
+    \end{red}
+    \item Let $f(x) = \ln(x)$. Find the Taylor polynomials up through order four of $f$ centered at $x=1$. Then find the Taylor series for $f(x)$ centered at $x=1$.
+    
+    \begin{red}
+    \[
+    \begin{array}{|l|l|l|l|}
+    \hline
+    n & f^{(n)}(x) & f^{(n)}(a)      & P_n(x)                                             \\ \hline
+    0 & \ln(x)     & \ln(1) = 0      & 0                                                  \\ \hline
+    1 & x^{-1}     & 1^{-1} = 1      & 1(x-1)                                             \\ \hline
+    2 & -1x^{-2}   & -1(1^{-2}) = -1 & 1(x-1) 
+                                       - \frac{1}{2!}(x-1)^2  \\ \hline
+    3 & 2x^{-3}    & 2(1^{-3}) = 2   & 1(x-1) 
+                                       - \frac{1}{2!}(x-1)^2 
+                                       + \frac{2}{3!}(x-1)^3 \\ \hline
+    4 & -6x^{-4}   & -6(1^{-4}) = -6 & 1(x-1) 
+                                       - \frac{1}{2!}(x-1)^2 
+                                       + \frac{2}{3!}(x-1)^3 
+                                       - \frac{6}{4!}(x-1)^4 \\ \hline
+    \end{array}
+    \]
+    I'm going to simplify that fourth one a little bit because it will help us spot the pattern:
+    \[P_4(x) = 1(x-1) 
+               - \frac{1}{2}(x-1)^2 
+               + \frac{1}{3}(x-1)^3 
+               - \frac{1}{4}(x-1)^4
+               \]
+    Okay, so here's my general series:
+    \[\ln(x) = \sum\limits_{k=1}^\infty (-1)^{k+1} \frac{1}{k} (x-1)^k\]
+    \end{red}
+    \item Use your result from (b) to determine which Taylor polynomial will approximate $\ln(2)$ to two decimal places. Explain in detail how you know you have the desired accuracy.
+    
+    \begin{red}
+    I'll use the Lagrange error bound with $c=2$ and $a=1$. For $M$, I'm noticing that $f^{(n)}(x) = (n-1)!\ x^{-n}$, either positive or negative, so $|f^{(n+1)}| = n!\  x^{-(n+1)} = \dfrac{n!}{x^{n+1}}$. This actually gets smaller as $x$ grows, so taking $x=1$ will yield the largest possible ``size of the next derivative.'' Therefore, we can take $M = \dfrac{n!}{1^{n+1}} = n!$.
+    
+    So, to be sure we have the first two decimal places correct, we want the result of the Lagrange error bound to be less than $0.001$:
+    \begin{align*}
+        \frac{M\ |c-a|^{n+1}}{(n+1)!} &< 0.001 = \frac{1}{1000} \\
+        \frac{n!\ |2-1|^{n+1}}{(n+1)!} &< \frac{1}{1000} \\
+        \frac{1}{n+1} &< \frac{1}{1000}
+    \end{align*}
+    Wow, so we need $n+1 > 1000$! Therefore we need to go out to the 1000th Taylor polynomial to even be sure that we're accurate to within two decimal places!
+    
+    (Okay, I guess if we think about this a little more, we just need to be accurate to within 0.005, because of how rounding works, and that'll give us something more like $n=200$, but still, dang!)
+    
+    Conclusions: the Taylor series for $\ln(x)$ converges exceptionally slowly; probably there has to be some kind of better way to produce rational approximations to values of the natural logarithm.
+    \end{red}
+    \item What do you think would be the interval of convergence for the Taylor series for $f(x) = \ln(x)$ centered at $x=1$? Why?
+    
+    \begin{red}
+    Since $\ln(x)$ has a vertical asymptote at $x=0$, and no polynomial can reproduce a vertical asymptote, I bet the interval of convergence only reaches to 0. Therefore, the radius of convergence is probably 1, so I bet the interval of convergence is either $0 < x < 2$ or $0 < x \leq 2$.
+    \end{red}
+    \item \textbf{(Bonus!)} Spot the pattern and write down what the series is. (Hint: start at $k=1$ because the $k=0$ term is zero anyway.) Use your series to actually calculate the interval of convergence.
+    
+    \begin{red}
+    Ratio test:
+    \begin{align*}
+        \lim_{k\to\infty} \left| \dfrac{a_{k+1}}{a_k} \right| &= 
+        \lim_{k\to\infty} \left| \dfrac{(-1)^{k+2} \frac{1}{k+1} (x-1)^{k+1}}{(-1)^{k+1} \frac{1}{k} (x-1)^k} \right| \\
+        \intertext{Notice that we can immediately ignore the $(-1)^\text{:)}$ things because we're in absolute value. Also, I'm going to use the reciprocal-of-the-denominator trick.}
+        &= \lim_{k\to\infty} \left| \frac{1}{k+1} (x-1)^{k+1} \cdot k\frac{1}{(x-1)^k}  \right| \\
+        &= \lim_{k\to\infty} \left| \frac{k}{k+1} \cdot \frac{(x-1)^{k-1}}{(x-1)^k} \right| \\
+        &= \lim_{k\to\infty} \left| \frac{k}{k+1} \cdot (x-1) \right| \\
+        &= |x-1|\lim_{k\to\infty} \frac{k}{k+1}
+    \end{align*}
+    Use your favorite strategy (L'Hopital's? fun algebra?) to notice that $\lim_{k\to\infty} \frac{k}{k+1} = 1$. Therefore, the result of the ratio test is $r = |x-1|$, so to have our series converge, we need $r < 1$, so $|x-1| < 1$. Therefore, the (interior of the) interval of convergence is $0 < x < 2$. (We'd need to test the endpoints separately.)
+    \end{red}
+\end{enumerate}
+
+
+\end{enumerate}
+\end{document}

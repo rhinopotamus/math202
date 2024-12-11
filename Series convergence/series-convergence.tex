@@ -1,0 +1,51 @@
+\input{../header}
+
+\begin{document}
+%
+
+
+%\onehalfspacing
+\allowdisplaybreaks
+%##################################################################
+\section{PS\#11 - Series convergence - \red{Answer key} }
+
+\everymath{\displaystyle}
+\begin{enumerate}[leftmargin=0pt]
+
+\item (\href{https://activecalculus.org/single/sec-8-3-series.html#CaV}{AC 8.3 Exercise 5}) In this exercise we investigate the sequence $\left\{\frac{b^n}{n!}\right\}$ for any constant $b$.
+\begin{enumerate}
+    \item Use the Ratio Test to determine if the series $\sum \frac{10^k}{k!}$ converges or diverges.
+    
+    \begin{red}
+    To use the Ratio Test, we're going to look at the limit of the ratio of the next term to the current term $\lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}$:
+    \begin{align*}
+        \lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}
+        &= \lim_{n\to\infty} \frac{10^{n+1}/(n+1)!}{10^n / n!} \\
+        &= \lim_{n\to\infty} \frac{10^{n+1}}{(n+1)!}\cdot \frac{n!}{10^n} \\
+        &= \lim_{n\to\infty} \frac{10 n!}{(n+1)!} 
+         = \lim_{n\to\infty} \frac{10}{n+1} = 0.
+    \end{align*}
+    Because this limit is less than 1, the Ratio Test tells us that the series converges.
+    \end{red}
+    \item Now apply the Ratio Test to determine if the series $\sum \frac{b^k}{k!}$ converges for any constant $b$.
+    
+    \begin{red}
+    There's nothing special about the number 10 in the work above; all our steps are just as valid if that's replaced with any other constant $b$:
+    \begin{align*}
+        \lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}
+        &= \lim_{n\to\infty} \frac{b^{n+1}/(n+1)!}{b^n / n!} \\
+        &= \lim_{n\to\infty} \frac{b^{n+1}}{(n+1)!}\cdot \frac{n!}{b^n} \\
+        &= \lim_{n\to\infty} \frac{b\cdot n!}{(n+1)!} 
+         = \lim_{n\to\infty} \frac{b}{n+1} = 0.
+    \end{align*}
+    Because this limit is less than 1, the Ratio Test tells us that the series converges.
+    \end{red}
+    \item Use your result from (b) to decide whether the sequence $\left\{\frac{b^n}{n!}\right\}$ converges or diverges. If the sequence $\left\{\frac{b^n}{n!}\right\}$ converges, to what does it converge? Explain your reasoning.
+    
+    \begin{red}
+    Since the series $\sum \frac{b^k}{k!}$ converges for any constant $b$, the Divergence Test tells us that the nth term has to go to 0. Therefore the sequence $\left\{\frac{b^n}{n!}\right\}$ must converge to 0.
+    \end{red}
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
