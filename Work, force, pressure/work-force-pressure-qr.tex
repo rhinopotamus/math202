@@ -1,0 +1,54 @@
+\input{../header}
+
+\begin{document}
+%
+
+
+%\onehalfspacing
+\allowdisplaybreaks
+%##################################################################
+\section{PS\#7: Work and pressure - \red{Answer key} }
+
+\everymath{\displaystyle}
+\begin{enumerate}[leftmargin=0pt]
+
+    \item (\href{https://activecalculus.org/single/sec-6-4-physics.html#wrN}{AC 6.4 Exercise 7}) A cylindrical tank, buried on its side, has radius 3 feet and length 10 feet. It is filled completely with water whose weight density is 62.4 lbs/ft$^3$, and the top of the tank is two feet underground.
+    
+    \begin{enumerate}
+        \item Set up, but do not evaluate, an integral expression that represents the amount of work required to empty the top half of the water in the tank to a truck whose tank lies 4.5 feet above ground.
+        \begin{red}
+        \begin{align*}
+            \Delta W(h) &= \Delta F(h) \cdot D(h) \\
+            &= \left[\rho \cdot \Delta V(h)\right] \cdot D(h) \\
+            &= \left[\rho \cdot \left(10 \cdot 2 \sqrt{9-h^2} \cdot \Delta h\right)\right] \cdot (9.5-h) \\
+            W_\text{total} &= \int_{h=0}^3 \left[62.4 \cdot \left(10 \cdot 2 \sqrt{9-h^2}\right)\right] \cdot (9.5-h)\, dh.
+        \end{align*}
+        \end{red}
+        
+        \item With the tank now only half-full, set up, but do not evaluate an integral expression that represents the total force due to hydrostatic pressure against one end of the tank.
+        
+        \begin{red}
+            \begin{align*}
+                \Delta F &= P(h) \cdot \Delta A(h) \\
+                &= (62.4 \cdot h) \cdot (w(h) \cdot \Delta h) \\
+                &= (62.4 \cdot h) \cdot (2\sqrt{9-h^2} \cdot \Delta h) \\
+                F_\text{total} &= \int_{h=0}^3 62.4\cdot h \cdot \left(2\sqrt{9-h^2}\right)\ dh.
+            \end{align*}
+        \end{red}
+    \end{enumerate}
+
+\item (\href{https://activecalculus.org/single/sec-6-4-physics.html#BsF}{Example 6.4.6}) Trapezoid dam, three setups
+
+\begin{red}
+
+    \begin{tabular}{l|l|l|l}
+        Setup                  & Width of slice      & Depth of slice & Bounds of integration                                    \\\hline
+        $h$ down from water level & $w(h) = 84 - 6/5 h$ & $d(h) = h $    & $0<h<20$ \\
+        $x$ down from top         & $w(x) = 90 - 6/5 x$ & $d(x) = x-5$   & $5<x<25$ \\
+        $q$ up from bottom        & $w(q) =60 + 6/5 q $ & $d(q) = 20-q $ & $0<q<20$ \\
+    \end{tabular}
+
+
+\end{red}
+\end{enumerate}
+\end{document}
