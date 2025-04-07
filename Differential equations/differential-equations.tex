@@ -1,4 +1,5 @@
 \input{../header}
+\usepackage{lscape}
 \begin{document}
 %
 
@@ -145,7 +146,7 @@ As noted later, if you want to learn how to solve this equation, you can google 
     \begin{red}
         See next page.
     \end{red}
-    \item In \#3, you decided what the exact solution is to the initial value problem $\dfrac{dy}{dt} = y-t$, $y(0) = -1$. Use this exact solution to compute the actual -values at each of these points, and compute the error in your approximation at each of these points.
+    \item In \#3, you decided what the exact solution is to the initial value problem $\dfrac{dy}{dt} = y-t$, $y(0) = -1$. Use this exact solution to compute the actual $y$-values at each of these points, and compute the error in your approximation at each of these points.
     
     \begin{red}
     We can compute actual $y$-values by plugging the current $t$-value into the function $y(t) = t+1-2e^t$.
@@ -177,6 +178,61 @@ As noted later, if you want to learn how to solve this equation, you can google 
 
 
 \end{enumerate}
+\pagebreak
+
+\begin{landscape}
+
+    Finally, try using one of the improvements to Euler's method that we discussed in class. How does this affect your error?
+
+\begin{red}
+
+Heun's method:
+\[
+    \begin{array}{|l|l|l|l|l|l|l|l|l|} \hline
+        t & y & \text{left slope}   & \Delta y   & \text{Euler }y      & \text{next }t & \text{right slope}  & \text{average slope}    & \Delta y       \\\hline
+        0         & -1           & -1           & -0.2          & -1.2         & 0.2    & -1.4         & -1.2         & -0.24         \\\hline
+        0.2       & -1.24        & -1.44        & -0.288        & -1.528       & 0.4    & -1.928       & -1.684       & -0.3368       \\\hline
+        0.4       & -1.5768      & -1.9768      & -0.39536      & -1.97216     & 0.6    & -2.57216     & -2.27448     & -0.454896     \\\hline
+        0.6       & -2.031696    & -2.631696    & -0.5263392    & -2.5580352   & 0.8    & -3.3580352   & -2.9948656   & -0.59897312   \\\hline
+        0.8       & -2.63066912  & -3.43066912  & -0.686133824  & -3.316802944 & 1      & -4.316802944 & -3.873736032 & -0.7747472064 \\\hline
+        1         & -3.405416326 & -4.405416326 & -0.8810832653 & -4.286499592 & 1.2    & -5.486499592 & -4.945957959 & -0.9891915918 \\\hline
+    \end{array}
+\]
+
+Midpoint
+\[
+    \begin{array}{|l|l|l|l|l|l|l|l|}
+        \hline
+        t & y    & \text{slope}        & \text{half }\Delta y  & \text{midpoint }y     & \text{midpoint }t & \text{midpoint slope} & \Delta y       \\ \hline
+        0         & -1           & -1           & -0.1          & -1.1         & 0.1      & -1.2         & -0.24         \\ \hline
+        0.2       & -1.24        & -1.44        & -0.144        & -1.384       & 0.3      & -1.684       & -0.3368       \\ \hline
+        0.4       & -1.5768      & -1.9768      & -0.19768      & -1.77448     & 0.5      & -2.27448     & -0.454896     \\ \hline
+        0.6       & -2.031696    & -2.631696    & -0.2631696    & -2.2948656   & 0.7      & -2.9948656   & -0.59897312   \\ \hline
+        0.8       & -2.63066912  & -3.43066912  & -0.343066912  & -2.973736032 & 0.9      & -3.873736032 & -0.7747472064 \\ \hline
+        1         & -3.405416326 & -4.405416326 & -0.4405416326 & -3.845957959 & 1.1      & -4.945957959 & -0.9891915918 \\ \hline
+    \end{array}
+\]
+
+It is interesting that Heun's method and the midpoint method both produce exactly the same approximate $y$-values. (I think this has to do with the fact that our differential equation is ``linear'' -- only first powers of $t$ and $y$ appear.)
+
+Here is the error table, again reported to five decimal places:
+
+\[
+\begin{array}{|l|l|l|l|}
+    \hline
+    \text{current } t & \text{approx } y & \text{actual } y & \textrm{Error} \\\hline 
+    0   & -1       & -1       & 0       \\ \hline
+    0.2 & -1.24    & -1.24281 & 0.00281 \\ \hline
+    0.4 & -1.5768  & -1.58365 & 0.00685 \\ \hline
+    0.6 & -2.03170 & -2.04424 & 0.01254 \\ \hline
+    0.8 & -2.63067 & -2.65108 & 0.02041 \\ \hline
+    1   & -3.40542 & -3.43656 & 0.03115 \\ \hline
+\end{array}
+\]
+
+\end{red}
+
+\end{landscape}
 \pagebreak
 
 \begin{blue}
