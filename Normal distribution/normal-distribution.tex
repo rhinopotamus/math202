@@ -18,26 +18,32 @@ Here is the equation for the ``normal probability density function'' with mean $
 You may know this function better by another name: the bell curve!
 
 
-Throughout this problem set, when you are asked to write down a Taylor series for some function, you may either use $\Sigma$ notation or write out the first few terms of the series.
+Throughout this problem set, when you are asked to write down a Taylor series for some function, you may either use $\Sigma$ notation or write out the first few terms of the series. You may in particular wish to write \textit{both} versions in each part, because frequently one is more useful than the other.
 \begin{enumerate}[leftmargin=0pt]
-    \item Draw a graph of $p(x)$. You can use Desmos but in a minute I'm going to ask you to shade something in so you may want something you can draw on.
+    \item Draw a graph of $p(x)$. You can use Desmos, but in a minute I'm going to ask you to shade something in, so you may want something you can draw on.
     \item We want to find the proportion of values that lie within one standard deviation ($\sigma = 1$) of the mean ($\mu=0$); in other words, we want to find the proportion of values that lie less than 1 distance away from 0 in either direction. Shade in this region on your graph.
-    \item We can compute this value by finding $\int_a^b p(x)\ dx$. What should our bounds of integration $a$ and $b$ be? Why?
-    \item If we find an antiderivative, $P(x)$, then our answer will be $P(b) - P(a)$. But unfortunately, we can't immediately write down an antiderivative $P(x)$. Why not?
+    \item Areas are definite integrals; we've just shaded in $\int_a^b p(x)\ dx$.\\ What should our bounds of integration $a$ and $b$ be? Why?
+    \item If we find an antiderivative of $p(x)$, which we might call $P(x)$, then our answer will be $P(b) - P(a)$. But unfortunately, we can't immediately write down an antiderivative $P(x)$. Why not?
     \item Write down the Taylor series for $f(u) = e^u$.
-    \item Use the Taylor series for $e^u$ to write down the Taylor series for $p(x).$  (Don't forget the $\tfrac{1}{\sqrt{2\pi}}$!)
-    \item Use the Taylor series for $p(x)$ to write down a Taylor series for its antiderivative $P(x)$.
-    \item Use the first four nonzero terms of the Taylor series for $P(x)$ to approximate $P(b)$. \\
-    (Hint: This is probably \textit{not} the fourth-degree polynomial.)
-    \item Use the first four nonzero terms of the Taylor series for $P(x)$ to approximate $P(a)$. \\
-    (Notice anything interesting about $P(a)$ in relation to $P(b)$?)
-    \item Find $P(b) - P(a)$. (Your answer should be close to 68\%.)
-    \item How many terms would be necessary to ensure that your approximation to $P(b)-P(a)$ is accurate to four decimal places? \textbf{Notes:}
+    \item Use the Taylor series for $e^u$ to write down $T_p(x)$, the Taylor series for $p(x).$  \\
+    (Don't forget the $\tfrac{1}{\sqrt{2\pi}}$!)
+    \item Use the Taylor series for $p(x)$ to write down the Taylor series for its antiderivative $P(x)$, which would therefore be called $T_P(x)$.
+    \item Safety check: if $a$ and $b$ were outside the interval of convergence for $T_P(x),$ that would be bad. Therefore, determine the interval of convergence for $T_P(x)$. (You can use the ratio test, or you can explain how you know what the interval of convergence is in some other way.)
+    \item Use the first four nonzero terms of $T_P(x)$ to approximate $P(b)$.\\ Report at least 7 decimal places in your answer.
+    \item Use the first four nonzero terms of $T_P(x)$ to approximate $P(a)$.\\ Again, report at least 7 decimal places.
+    \item Use your values from the two previous parts to approximate $P(b) - P(a)$. \\
+    (Your answer should be close to 68\%.)
+
+    \vfill
+    (Problem continues on other side of this page!)
+    \newpage
+
+    \item Now let's think about accuracy. How many terms in $T_P(x)$ would be necessary to ensure that your approximation to $P(b)-P(a)$ is accurate to four decimal places? \textbf{Notes:}
     \begin{itemize}
         \item By ``accurate to four decimal places,'' we mean that if we rounded both our approximation and the actual value to the fourth decimal place, they'd round to the same thing. How far off can we be?
-        \item You can't compare your computed value directly to the actual value, because the actual value is unknown!
-        \item This is an alternating series, so we can use the alternating series error bound.
-        \item We're actually using two values, $P(b)$ and $P(a)$, so we can accrue some error from both ends. You may have noticed something nice about how $P(b)$ and $P(a)$ are related that will be helpful.
+        \item You can't compare your computed value directly to the actual value, because the actual value is in principle unknown!
+        \item This is an alternating series, so we can use the alternating series error bound. (The Lagrange error bound for this particular series is, uh, difficult.)
+        \item We're actually approximating two different values, $P(b)$ and $P(a)$, so to figure out the total error, we'll need to think separately about the error in each approximation.
     \end{itemize} 
     \item Conclude by telling me why Taylor series are really awesome for dealing with yucky integrals.
     \item \textbf{(Bonus!)} Similarly, check the ``95'' and ``99.7'' parts of the rule, which talk about the proportion of values within 2 and 3 standard deviations of the mean.
