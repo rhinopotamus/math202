@@ -25,12 +25,12 @@ Throughout this problem set, when you are asked to write down a Taylor series fo
         \includegraphics[width=0.8\textwidth]{../images/normal-curve-shaded.png}
     \end{center}
     
-    \item We can compute this value by finding $\int_a^b p(x)\ dx$. What should our bounds of integration $a$ and $b$ be, and why?
+    \item Areas are definite integrals; we've just shaded in $\int_a^b p(x)\ dx$.\\ What should our bounds of integration $a$ and $b$ be? Why?
 
     \begin{red}
         The bounds of integration should be from $a=-1$ to $b=1$. We want to go 1 distance away from 0 in either direction.
     \end{red}
-    \item If we start by finding an antiderivative, $P(x)$, then our answer will be $P(b) - P(a)$. But unfortunately, we can't immediately write down an antiderivative $P(x)$. Why not?
+    \item If we find an antiderivative of $p(x)$, which we might call $P(x)$, then our answer will be $P(b) - P(a)$. But unfortunately, we can't immediately write down an antiderivative $P(x)$. Why not?
 
     \begin{red}
         This is one of our rude functions that doesn't have an antiderivative -- the $x^2$ inside the $\exp(\ldots)$ means that substitution won't work, in particular.
@@ -40,7 +40,8 @@ Throughout this problem set, when you are asked to write down a Taylor series fo
     \begin{red}
     \[e^u = \sum_{k=0}^\infty \frac{1}{k!} u^k = 1 + \frac{u}{1!} + \frac{u^2}{2!} + \frac{u^3}{3!} + \ldots \]
     \end{red}
-    \item Use the Taylor series for $e^u$ to write down the Taylor series for $p(x).$ \\ (Don't forget the $\tfrac{1}{\sqrt{2\pi}}$!)
+    \item Use the Taylor series for $e^u$ to write down $T_p(x)$, the Taylor series for $p(x).$\\ 
+    (Don't forget the $\tfrac{1}{\sqrt{2\pi}}$!)
     
     \begin{red}
     We are going to substitute $-\frac{x^2}{2}$ for all the $u$'s in the previous result, then multiply by $\frac{1}{\sqrt{2\pi}}$:
@@ -48,7 +49,7 @@ Throughout this problem set, when you are asked to write down a Taylor series fo
     Simplifying a little:
     \[ p(x) = \frac{1}{\sqrt{2\pi}} \sum_{k=0}^\infty \frac{(-1)^k x^{2k}}{k!\cdot 2^k} = \frac{1}{\sqrt{2\pi}} \left(1 - \frac{x^2}{1! \cdot 2} + \frac{x^4}{2!\cdot 4} - \frac{x^6}{3!\cdot 8} + \frac{x^8}{4! \cdot 16} \ldots \right) \]
     \end{red}
-    \item Use the Taylor series for $p(x)$ to write down a Taylor series for its antiderivative $P(x)$.
+    \item Use the Taylor series for $p(x)$ to write down the Taylor series for its antiderivative $P(x)$, which would therefore be called $T_P(x)$.
     
     \begin{red}
     I'm going to integrate the thing inside the sum with respect to $x$, then stick it all back in the sum. Notice that I don't need a $+C$ because this will eventually become a definite integral.
@@ -59,8 +60,18 @@ Throughout this problem set, when you are asked to write down a Taylor series fo
     
     \[P(x) = \frac{1}{\sqrt{2\pi}} \sum_{k=0}^\infty \frac{(-1)^k x^{2k+1} }{k!\cdot 2^k \cdot (2k+1)} = \frac{1}{\sqrt{2\pi}} \left(x - \frac{x^3}{1! \cdot 2\cdot 3} + \frac{x^5}{2!\cdot 4\cdot 5} - \frac{x^7}{3!\cdot 8 \cdot 7} + \frac{x^9}{4! \cdot 16\cdot 9} \ldots \right)\]
     \end{red}
-    \item Use the first four nonzero terms of the Taylor series for $P(x)$ to approximate $P(b)$. \\
-    (Hint: This is probably \textit{not} the fourth-degree polynomial.)
+    \item Safety check: if $a$ and $b$ were outside the interval of convergence for $T_P(x),$ that would be bad. Therefore, determine the interval of convergence for $T_P(x)$. (You can use the ratio test, or you can explain how you know what the interval of convergence is in some other way.)
+
+    \begin{red}
+        Since:
+        \begin{itemize}
+            \item the interval of convergence for the Taylor series of $e^u$ is infinite,
+            \item we obtained $T_p(x)$ through substituting $x^2$, which has no singularities, into the Taylor series for $e^u$,
+            \item and we obtained $T_P(x)$ through integration, which does not change the interval of convergence,
+        \end{itemize}
+        we can conclude that $T_P(x)$ also converges for all $-\infty < x < \infty$.
+    \end{red}
+    \item Use the first four nonzero terms of $T_P(x)$ to approximate $P(b)$.
     
     \begin{red}
     So we're going to plug $b$, which is $1$, in for $x$ in each of the first four terms of our series (the ones that come from $k=0, 1, 2, 3$):
@@ -69,10 +80,9 @@ Throughout this problem set, when you are asked to write down a Taylor series fo
     
     According to Wolfram Alpha, that's $\frac{1}{\sqrt{2\pi}}\cdot  \frac{479}{560} \approx 0.34124$.
     
-    (Notice, btw, that this is indeed \textit{not} the fourth-degree polynomial -- it's the 7th-degree polynomial. This is actually good because higher powers of $x$ are probably going to give us better approximations, so it's nice when they come earlier in the series than we would otherwise think.)
+    (Notice, btw, that this is \textit{not} the fourth-degree polynomial -- it's the 7th-degree polynomial. This is actually good because higher powers of $x$ are probably going to give us better approximations, so it's nice when they come earlier in the series than we would otherwise think.)
     \end{red}
-    \item Use the first four nonzero terms of the Taylor series for $P(x)$ to approximate $P(a)$. \\
-    (Hint: This is probably \textit{not} the fourth-degree polynomial.)
+    \item Use the first four nonzero terms of $T_P(x)$ to approximate $P(a)$.
     
     \begin{red}
     Similar: we're going to plug $a$, which is $-1$, in for $x$ in each of the first four terms of our series:
@@ -80,12 +90,18 @@ Throughout this problem set, when you are asked to write down a Taylor series fo
     
     According to Wolfram Alpha, that's $-\frac{1}{\sqrt{2\pi}}\cdot  \frac{479}{560} \approx -0.34124$.
     \end{red}
-    \item Find $P(b) - P(a)$. (Your answer should be close to 68\%.)
+    \item Use your values from the two previous parts to approximate $P(b) - P(a)$. \\ (Your answer should be close to 68\%.)
     
     \begin{red}
     \[P(1) - P(-1) \approx \frac{1}{\sqrt{2\pi}}\cdot  \frac{479}{560} - \left( - \frac{1}{\sqrt{2\pi}}\cdot  \frac{479}{560}\right) \approx 0.34124 + 0.34124 = 0.68248.\]
     \end{red}
-    \item How many terms would be necessary to ensure that your approximation to $P(b)-P(a)$ is accurate to four decimal places? 
+    \item Now let's think about accuracy. How many terms in $T_P(x)$ would be necessary to ensure that your approximation to $P(b)-P(a)$ is accurate to four decimal places? \textbf{Notes:}
+    \begin{itemize}
+        \item By ``accurate to four decimal places,'' we mean that if we rounded both our approximation and the actual value to the fourth decimal place, they'd round to the same thing. How far off can we be?
+        \item You can't compare your computed value directly to the actual value, because the actual value is in principle unknown!
+        \item This is an alternating series, so we can use the alternating series error bound. (The Lagrange error bound for this particular series is, uh, difficult.)
+        \item We're actually approximating two different values, $P(b)$ and $P(a)$, so to figure out the total error, we'll need to think separately about the error in each approximation.
+    \end{itemize} 
     
     \begin{red}
     We're going to use the alternating series error bound:
@@ -107,6 +123,12 @@ k     & 1         & 2         & 3         & 4         & 5         & 6         \\
     You can check that our five-term approximation is about $0.6827071$ -- so we can be confident that the true value rounded to the fourth decimal place is exactly $0.6827$.
     
     (Aside: The Lagrange error bound is probably a bad idea here because the pattern in the derivatives is, uh, \href{https://math.stackexchange.com/questions/1488210/how-to-get-nth-derivative-of-ex2-2}{complicated}.)
+    \end{red}
+
+    \item Conclude by telling me why Taylor series are really awesome for dealing with yucky integrals.
+
+    \begin{red}
+        (Your answers may vary, but something I'd say is that Taylor series allow us to replace ``integrating things with no antiderivative'' by ``integrating polynomials.'' Easy!)
     \end{red}
 \end{enumerate}
 \end{document}
