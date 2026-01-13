@@ -1,0 +1,177 @@
+\documentclass[11 pt]{article}
+
+\setlength{\oddsidemargin}{-.45in}
+%\setlength{\evensidemargin}{-.5in}
+\setlength{\textwidth}{7.25in}
+\setlength{\topmargin}{-0.95in}
+\setlength{\textheight}{10.2in}
+
+\usepackage{graphics}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+%\usepackage{multicol}
+%\usepackage{wrapfig}
+\pagestyle{empty}
+
+\usepackage[T1]{fontenc}
+\usepackage{baskervald}
+\usepackage[bigdelims,vvarbb]{newtxmath} 
+
+\newcommand{\ds}{\ensuremath{\displaystyle}}
+\newcommand{\tr}{\vspace{0.5in}}
+\newcommand{\lr}{\vspace{1.0in}}
+\newcommand{\mr}{\vspace{2.0in}}
+\newcommand{\br}{\vspace{3.0in}}
+
+\newcommand{\ps}{Problem Set~}
+\newcommand{\vi}{\ensuremath{\mathbf{i}}}
+\newcommand{\vj}{\ensuremath{\mathbf{j}}}
+\newcommand{\vk}{\ensuremath{\mathbf{k}}}
+\newcommand{\vr}{\ensuremath{\mathbf{r}}}
+\newcommand{\vecv}{\ensuremath{\mathbf{v}}}
+\newcommand{\vu}{\ensuremath{\mathbf{u}}}
+\newcommand{\va}{\ensuremath{\mathbf{a}}}
+\newcommand{\vs}{\ensuremath{\mathbf{s}}}
+\newcommand{\ve}{\ensuremath{\mathbf{e}}}
+\newcommand{\vx}{\ensuremath{\mathbf{x}}}
+\newcommand{\vc}{\ensuremath{\mathbf{c}}}
+\newcommand{\vb}{\ensuremath{\mathbf{b}}}
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true, linkcolor=blue,  anchorcolor=blue,  
+citecolor=blue, filecolor=blue, menucolor=blue, pagecolor=blue,  
+urlcolor=blue,pdftitle={MTH 202 Checkpoint}}
+
+\usepackage{framed}
+
+\newcommand{\bdr}{\ensuremath{\mathbb{R}}}
+
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\bi}{\begin{itemize}}  
+\newcommand{\ei}{\end{itemize}}
+
+%\renewcommand{\baselinestretch}{1.5}
+
+
+\begin{document}
+ \hfill Boelkins \\
+ 
+\begin{center}
+Math 202-06 \\
+{\bf Checkpoint 4}
+\end{center}
+
+
+\noindent {\bf Directions:}
+
+\begin{itemize}
+	
+	\item {\bf Desmos.} You may use \href{https://www.desmos.com/calculator}{\emph{Desmos}} for computations and graphing, just like we do during class.  Any work done in \emph{Desmos} must be summarized and briefly explained in writing on your paper.  
+	
+	\item {\bf Resources.} During each checkpoint, you may access your own 1 page of study notes, plus \emph{Desmos}; no other uses of your computer or tablet are permitted unless specified directly.  No collaboration with other human beings or other internet resources are allowed.
+	
+%	\emph{Note well: if you collaborate with someone else, it is often obvious that collaboration has occurred.  Please do not put your academic standing at risk by doing this.}
+	
+	\item {\bf Competence.} Each week, your goal is to demonstrate competence on as many of the included learning targets as you can.  Each question will be marked either ``Y'' or ``NY'': Y for ``yes'', NY for ``not yet''.  Every learning target will appear on three different checkpoints, so you'll have multiple attempts to demonstrate your understanding.  ``Competence'' is defined as work that demonstrates clear and complete understanding of the relevant concepts in the learning target. While the work may include a minor error, or one or two minor steps may not be well explained, otherwise the work is complete, correct, and convincing, including the proper use of notation, and appropriate explanation of meaning that uses correct terminology.  (On rare occasions, you might get a ``NY*''; such a mark means you are close to competence and that you have the option to have a short conversation with me prior to the next Checkpoint and attempt to demonstrate ``Y''-level understanding through the conversation aloud.)	
+\end{itemize}
+
+\noindent \hrulefill \\
+
+\noindent {\bf Learning Targets:} For Checkpoint \#4, there are three learning targets being assessed: 
+
+\begin{quote}
+{\bf LT 3}: I can apply the Second Fundamental Theorem of Calculus to find the antiderivative of a function in terms of an integral and also use the Second FTC to differentiate an integral function. (Section 5.2)
+\end{quote}
+
+\begin{quote}
+{\bf LT 4}: I can use integration by substitution and integration by parts to evaluate integrals. (Sections 5.3 and 5.4). {\bf Note.} Implicit in this learning target is that you can decide which method to apply to evaluate a given integral and clearly identify the substitution needed to use the method.
+\end{quote}
+
+\begin{quote}
+{\bf LT 5}: I can apply an appropriate technique to approximate a definite integral. (Section 5.6)
+\end{quote}
+
+\noindent \hrulefill \\
+
+\vfill \hfill {\bf OVER} 
+
+\pagebreak
+
+\noindent Name: \\ \ \\
+
+\noindent To demonstrate competence on Learning Target \#$n$, you need to correctly respond to all or nearly all of the prompts in question \#$n$.  
+
+\begin{enumerate}
+
+%{\bf LT 3}: I can apply the Second Fundamental Theorem of Calculus to find the antiderivative of a function in terms of an integral and also use the FTC to differentiate an integral function. (Section 5.2)
+
+	\item[3.] \ 
+	\be
+		\item Suppose that $H(x) = \int_3^x e^{t^5+1} \, dt$.  Find a formula for $H'(x)$ and then determine $H'(0)$.  Write one sentence to explain your thinking.
+		
+		\lr \tr
+		
+		\item Consider the function $f(x) = \cos(x^4)$.
+		
+		\be
+			\item Explain why it is hard or impossible to find an algebraic antiderivative (that is, a formula that doesn't involve an integral) for $f(x) = \cos(x^4)$.
+			
+			\lr \lr
+			
+			\item Use the Second FTC to state an antiderivative $F(x)$ for $f(x) = \cos(x^4)$ such that $F$ satisfies \\ $F(-1) = 0$.
+		\ee	
+	\ee
+		
+
+\pagebreak
+
+\item[4.] 
+
+	\be
+		\item Evaluate each of the following integrals either using $u$-substitution or integration by parts.  For each, \emph{clearly state your substitution/method including any new variables you use, show all of your work, and write one sentence that explains what motivated your choice of method and substitution}.  Your process is even more important than your answer in each.
+
+			\be
+				\item $\ds \int 5x \sin(2x) \, dx$
+			
+				\mr
+			
+				\item $\ds \int e^x \cos(e^x) \, dx$
+			
+				\mr
+
+				\item $\ds \int x^7 \ln(x) \, dx$
+
+			\ee
+
+	\ee
+	
+	\pagebreak
+
+%{\bf LT 5}: I can apply an appropriate technique to approximate a definite integral. (Section 5.6)
+
+\item[5.] Suppose we know the following information about a function $f(x)$: $f$ is continuous on the interval $[3,6.6]$, $f$ is either always increasing or always decreasing on the interval, and $f$ is either always concave up or always concave down.  In addition, we have the following data:
+
+	\begin{center}
+		\begin{tabular}{l|ccccccccc}
+		$x$  & 3.0 & 3.6 & 4.2 & 4.8 & 5.4 & 6.0 & 6.6 \\
+		\hline 
+		$f(x)$ & 3.7 & 3.1 & 2.7 & 2.4 & 2.2 & 2.1 & 2.05
+		\end{tabular}
+	\end{center}
+
+Use the given information to determine the best possible estimate you can for $\ds \int_3^{6.6} f(x) \, dx$. \\  
+Start by finding $L_3$, $R_3$, and $M_3$ as estimates of $\ds \int_3^{6.6} f(x) \, dx$, and then use them appropriately to do find the best possible estimate.  \\  
+
+Show a clear summary of your computations using appropriate notation, and write one sentence to explain how you found your final estimate.
+	
+\end{enumerate}
+
+
+
+\end{document}
+

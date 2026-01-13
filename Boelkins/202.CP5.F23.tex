@@ -1,0 +1,198 @@
+\documentclass[11 pt]{article}
+
+\setlength{\oddsidemargin}{-.45in}
+%\setlength{\evensidemargin}{-.5in}
+\setlength{\textwidth}{7.25in}
+\setlength{\topmargin}{-0.95in}
+\setlength{\textheight}{10.2in}
+
+\usepackage{graphics}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+%\usepackage{multicol}
+%\usepackage{wrapfig}
+\pagestyle{empty}
+
+\usepackage[T1]{fontenc}
+\usepackage{baskervald}
+\usepackage[bigdelims,vvarbb]{newtxmath} 
+
+\newcommand{\ds}{\ensuremath{\displaystyle}}
+\newcommand{\tr}{\vspace{0.5in}}
+\newcommand{\lr}{\vspace{1.0in}}
+\newcommand{\mr}{\vspace{2.0in}}
+\newcommand{\br}{\vspace{3.0in}}
+
+\newcommand{\ps}{Problem Set~}
+\newcommand{\vi}{\ensuremath{\mathbf{i}}}
+\newcommand{\vj}{\ensuremath{\mathbf{j}}}
+\newcommand{\vk}{\ensuremath{\mathbf{k}}}
+\newcommand{\vr}{\ensuremath{\mathbf{r}}}
+\newcommand{\vecv}{\ensuremath{\mathbf{v}}}
+\newcommand{\vu}{\ensuremath{\mathbf{u}}}
+\newcommand{\va}{\ensuremath{\mathbf{a}}}
+\newcommand{\vs}{\ensuremath{\mathbf{s}}}
+\newcommand{\ve}{\ensuremath{\mathbf{e}}}
+\newcommand{\vx}{\ensuremath{\mathbf{x}}}
+\newcommand{\vc}{\ensuremath{\mathbf{c}}}
+\newcommand{\vb}{\ensuremath{\mathbf{b}}}
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true, linkcolor=blue,  anchorcolor=blue,  
+citecolor=blue, filecolor=blue, menucolor=blue, pagecolor=blue,  
+urlcolor=blue,pdftitle={MTH 202 Checkpoint}}
+
+\usepackage{framed}
+
+\newcommand{\bdr}{\ensuremath{\mathbb{R}}}
+
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\bi}{\begin{itemize}}  
+\newcommand{\ei}{\end{itemize}}
+
+%\renewcommand{\baselinestretch}{1.5}
+
+
+\begin{document}
+ \hfill Boelkins \\
+ 
+\begin{center}
+Math 202-06 \\
+{\bf Checkpoint 5}
+\end{center}
+
+
+\noindent {\bf Directions:}
+
+\begin{itemize}
+	
+	\item {\bf Desmos.} You may use \href{https://www.desmos.com/calculator}{\emph{Desmos}} for computations and graphing, just like we do during class.  Any work done in \emph{Desmos} must be summarized and briefly explained in writing on your paper.  
+	
+	\item {\bf Resources.} During each checkpoint, you may access your own 1 page of study notes, plus \emph{Desmos}; no other uses of your computer or tablet are permitted unless specified directly.  No collaboration with other human beings or other internet resources are allowed.
+	
+%	\emph{Note well: if you collaborate with someone else, it is often obvious that collaboration has occurred.  Please do not put your academic standing at risk by doing this.}
+	
+	\item {\bf Competence.} Each week, your goal is to demonstrate competence on as many of the included learning targets as you can.  Each question will be marked either ``Y'' or ``NY'': Y for ``yes'', NY for ``not yet''.  Every learning target will appear on three different checkpoints, so you'll have multiple attempts to demonstrate your understanding.  ``Competence'' is defined as work that demonstrates clear and complete understanding of the relevant concepts in the learning target. While the work may include a minor error, or one or two minor steps may not be well explained, otherwise the work is complete, correct, and convincing, including the proper use of notation, and appropriate explanation of meaning that uses correct terminology.  (On rare occasions, you might get a ``NY*''; such a mark means you are close to competence and that you have the option to have a short conversation with me prior to the next Checkpoint and attempt to demonstrate ``Y''-level understanding through the conversation aloud.)	
+\end{itemize}
+
+\noindent \hrulefill \\
+
+\noindent {\bf Learning Targets:} For Checkpoint \#5, there are three learning targets being assessed: 
+
+\begin{quote}
+{\bf LT 4}: I can use integration by substitution and integration by parts to evaluate integrals. (Sections 5.3 and 5.4). {\bf Note.} Implicit in this learning target is that you can decide which method to apply to evaluate a given integral and clearly identify the substitution needed to use the method.
+\end{quote}
+
+\begin{quote}
+{\bf LT 5}: I can apply an appropriate technique to approximate a definite integral. (Section 5.6)
+\end{quote}
+
+\begin{quote}
+{\bf LT 6}: I can use definite integrals to find the area between two curves and the volume of a solid of revolution. (Sections 6.1 and 6.2)
+\end{quote}
+
+\noindent \hrulefill \\
+
+\vfill \hfill {\bf OVER} 
+
+\pagebreak
+
+\noindent Name: \\ 
+
+\noindent To demonstrate competence on Learning Target \#$n$, you need to correctly respond to all or nearly all of the prompts in question \#$n$.  
+
+\begin{enumerate}
+
+\item[4.] 
+
+	\be
+		\item Evaluate each of the following integrals either using $u$-substitution or integration by parts.  For each, \emph{clearly state your substitution/method including any new variables you use, show all of your work, and write one sentence that explains what motivated your choice of method and substitution}.  Your process is even more important than your answer in each.
+
+			\be
+			
+				\item $\ds \int x^5 \cos(x^6 + 3) \, dx$
+			
+				\lr \tr
+				
+				\item $\ds \int 5x e^{5x} \, dx$
+			
+				\lr \tr
+			\ee
+	
+		\item Consider an integral of the form
+		$$\int x \sin(g(x)) \, dx$$
+
+			\be
+			
+				\item	Give an example of a function you could choose for $g(x)$ that would allow you to evaluate the integral $\int x \sin(g(x)) \, dx$ using $u$-substitution.   State your function $g(x)$ clearly and state the full $u$-substitution you'd use, but {\bf don't} actually evaluate the integral.  \emph{Write a sentence to explain your thinking.}
+
+					\lr
+				
+				\item Give an example of a function you could choose for $g(x)$ that would allow you to evaluate the integral $\int x \sin(g(x)) \, dx$ using integration by parts.   State your function $g(x)$ clearly and state the full substitution you'd use (that is, state $u$, $du$, $dv$ and $v$, but {\bf don't} actually evaluate the integral.  \emph{Write a sentence to explain your thinking.}
+	
+
+				
+
+			\ee
+	\ee
+	
+	\pagebreak
+
+
+\noindent Name: \\ 
+
+%{\bf LT 5}: I can apply an appropriate technique to approximate a definite integral. (Section 5.6)
+
+\item[5.] Suppose we know the following information about a function $g(x)$: $g$ is continuous on the interval $[4,6.4]$, \\ $g$ is either always increasing or always decreasing on the interval, and $g$ is either always concave up or always concave down.  In addition, we have the following data:
+
+	\begin{center}
+		\begin{tabular}{l|ccccccccc}
+		$x$  & 4.0 & 4.3 & 4.6 & 4.9 & 5.2 & 5.5 & 5.8 & 6.1 & 6.4 \\
+		\hline 
+		$g(x)$ & -3.0 & -1.8 & -0.8 & 0.05 & 0.6 & 0.95 & 1.2 & 1.1 & 1.06 
+		\end{tabular}
+	\end{center}
+
+Use the given information to determine the best possible estimate you can for $\ds \int_4^{6.4} g(x) \, dx$. \\  
+Start by finding $L_4$, $R_4$, and $M_4$ as estimates of $\ds \int_4^{6.4} g(x) \, dx$, and then use them appropriately to do find the best possible estimate.  \\  
+
+Show a clear summary of your computations using appropriate notation, and write one sentence to explain how you found your final estimate.
+
+\pagebreak
+
+\noindent Name: \\ 
+
+%{\bf LT 6}: I can use definite integrals to find the area between two curves and the volume of a solid of revolution. (Sections 6.1 and 6.2)
+
+\item[6.] For each of the following prompts, {\bf set up, but do not evaluate, the integral that gives the area or volume of each region described}.  Your processes are even more
+important than your final answers here, so show all of your work in a clear and logical order. 
+
+For each, include (i) a careful, labeled plot, (ii) a representative slice, (iii) the area/volume of that representative slice, and (iv) make
+sure your final answer is clearly indicated (for example by circling it).
+	
+	
+	\be
+		\item The exact area of the region bounded by $y^2 = x + 3$ and $y = 3 - x$. \\
+		
+		\scalebox{0.28}{\includegraphics{images/CP-5-blank-grid-LT6.png}} \\
+	 	
+		\item (\emph{The region in this question is different from the one in} (\emph{a}).) The exact volume that results from taking the finite region bounded by $y = 4 - x^2$ and $y = 4-2x$ and revolving that region about the $x$-axis. \\
+		
+		\scalebox{0.28}{\includegraphics{images/CP-5-blank-grid-LT6.png}} \\
+	 	
+		\item (\emph{The region in this question is the same as the one in} (\emph{b}).) The exact volume that results from taking the finite region bounded by $y = 4 - x^2$ and $y = 4-2x$ and revolving that region about the $y$-axis. \\
+		
+		\scalebox{0.28}{\includegraphics{images/CP-5-blank-grid-LT6.png}} \\		
+	\ee
+	
+\end{enumerate}
+
+
+
+\end{document}
+

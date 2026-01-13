@@ -1,0 +1,228 @@
+\documentclass[11 pt]{article}
+
+\setlength{\oddsidemargin}{-.45in}
+%\setlength{\evensidemargin}{-.5in}
+\setlength{\textwidth}{7.25in}
+\setlength{\topmargin}{-0.95in}
+\setlength{\textheight}{10.2in}
+
+\usepackage{graphics}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+%\usepackage{multicol}
+%\usepackage{wrapfig}
+\pagestyle{empty}
+
+\usepackage[T1]{fontenc}
+\usepackage{baskervald}
+\usepackage[bigdelims,vvarbb]{newtxmath} 
+
+\newcommand{\ds}{\ensuremath{\displaystyle}}
+\newcommand{\tr}{\vspace{0.5in}}
+\newcommand{\lr}{\vspace{1.0in}}
+\newcommand{\mr}{\vspace{2.0in}}
+\newcommand{\br}{\vspace{3.0in}}
+
+\newcommand{\ps}{Problem Set~}
+\newcommand{\vi}{\ensuremath{\mathbf{i}}}
+\newcommand{\vj}{\ensuremath{\mathbf{j}}}
+\newcommand{\vk}{\ensuremath{\mathbf{k}}}
+\newcommand{\vr}{\ensuremath{\mathbf{r}}}
+\newcommand{\vecv}{\ensuremath{\mathbf{v}}}
+\newcommand{\vu}{\ensuremath{\mathbf{u}}}
+\newcommand{\va}{\ensuremath{\mathbf{a}}}
+\newcommand{\vs}{\ensuremath{\mathbf{s}}}
+\newcommand{\ve}{\ensuremath{\mathbf{e}}}
+\newcommand{\vx}{\ensuremath{\mathbf{x}}}
+\newcommand{\vc}{\ensuremath{\mathbf{c}}}
+\newcommand{\vb}{\ensuremath{\mathbf{b}}}
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true, linkcolor=blue,  anchorcolor=blue,  
+citecolor=blue, filecolor=blue, menucolor=blue, pagecolor=blue,  
+urlcolor=blue,pdftitle={MTH 202 Checkpoint}}
+
+\usepackage{framed}
+
+\newcommand{\bdr}{\ensuremath{\mathbb{R}}}
+
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\bi}{\begin{itemize}}  
+\newcommand{\ei}{\end{itemize}}
+
+%\renewcommand{\baselinestretch}{1.5}
+
+
+\begin{document}
+ \hfill Boelkins \\
+ 
+\begin{center}
+Math 202-06 \\
+{\bf Checkpoint 10}
+\end{center}
+
+
+\noindent {\bf Directions:}
+
+\begin{itemize}
+	
+	\item {\bf Desmos.} You may use \href{https://www.desmos.com/calculator}{\emph{Desmos}} for computations and graphing, just like we do during class.  Any work done in \emph{Desmos} must be summarized and briefly explained in writing on your paper.  
+	
+	\item {\bf Resources.} During each checkpoint, you may access your own 1 page of study notes, plus \emph{Desmos}; no other uses of your computer or tablet are permitted unless specified directly.  No collaboration with other human beings or other internet resources are allowed.
+	
+%	\emph{Note well: if you collaborate with someone else, it is often obvious that collaboration has occurred.  Please do not put your academic standing at risk by doing this.}
+	
+	\item {\bf Competence.} Each week, your goal is to demonstrate competence on as many of the included learning targets as you can.  Each question will be marked either ``Y'' or ``NY'': Y for ``yes'', NY for ``not yet''.  Every learning target will appear on three different checkpoints, so you'll have multiple attempts to demonstrate your understanding.  ``Competence'' is defined as work that demonstrates clear and complete understanding of the relevant concepts in the learning target. While the work may include a minor error, or one or two minor steps may not be well explained, otherwise the work is complete, correct, and convincing, including the proper use of notation, and appropriate explanation of meaning that uses correct terminology.  (On rare occasions, you might get a ``NY*''; such a mark means you are close to competence and that you have the option to have a short conversation with me prior to the next Checkpoint and attempt to demonstrate ``Y''-level understanding through the conversation aloud.)	
+\end{itemize}
+
+\noindent \hrulefill \\
+
+\noindent {\bf Learning Targets:} For Checkpoint \#10, there are four learning targets being assessed: 
+
+\begin{quote}
+{\bf LT 9}: I can check whether a function is a solution to a differential equation and explain why the function is or is not a solution.
+\end{quote}
+
+\begin{quote}
+{\bf LT 10}:  I can apply Euler’s Method to generate an approximate solution to an initial value problem and explain the result’s meaning in context.
+\end{quote}
+
+\begin{quote}
+{\bf LT 11}:  I can express real world situations as differential equations, determine any stable or unstable equilibrium solutions, and explain the significance of the equilibrium solutions in context.
+\end{quote}
+
+\begin{quote}
+{\bf LT 12}:  Given appropriate information about a function, I can find its Taylor polynomials at a given center a.
+\end{quote}
+
+\noindent \hrulefill \\
+
+\vfill \hfill {\bf OVER} 
+
+\pagebreak
+
+\noindent Name: \\ 
+
+\noindent To demonstrate competence on Learning Target \#$n$, you need to correctly respond to all or nearly all of the prompts in question \#$n$.  
+
+\begin{enumerate}
+
+%{\bf LT 10}: I can check whether a function is a solution to a differential equation and explain why the function is or is not a solution.
+
+\item[9.] For each of the following prompts, determine whether or not the given function is or is not a solution to the given differential equation.  For each, show your computational/algebraic work and write a brief sentence to clearly justify your conclusion.
+	
+	
+	\be
+		\item $P(t) = -10e^{-0.3t}$, $\frac{dP}{dt} = -\frac{3}{10}P$
+		%$\frac{dM}{dt} = 0.1M - 10$, $M(t) = 100 + 5e^{0.1t}$
+		%$y(t) = \frac{1}{3}t^3 + e^{2t} + 5$; $\frac{dy}{dt} = t^2 + e^{2t}$		
+	
+		\lr \tr \tr
+	
+		\item $y(t) = 5 e^{-0.5t}$, $\frac{dy}{dt} = e^{-0.5t}$.
+		%$\frac{dQ}{dt} = -4Q$, $Q(t) = \sin(4t)$
+		%$P(t) = 4$; $\frac{dP}{dt} = -3P(4-P)$
+		
+		\lr \tr \tr
+		
+		\item $M(t) = \frac{1}{1-t}$, $\frac{dM}{dt} = M^2$
+		%$\frac{dy}{dt} = -4t$, $y(t) = -2t^2 + 11$
+		%$F(t) = 70 + 25e^{-0.1t}$; $\frac{dF}{dt} = -\frac{1}{10}F  + 7$
+		
+		\lr \tr \tr
+		
+		\item $Q(t) = 4$; $\frac{dQ}{dt} = -4Q(4+Q)$
+		%$\frac{dP}{dt} = -0.05 P (20 - P)$, $P(t) = 20$
+		%$A(t) = \cos(2t)$; $\frac{dA}{dt} = -2A$
+		
+		\	
+
+	\ee
+	
+
+\pagebreak
+
+% {\bf LT 11}:  I can apply Euler’s Method to generate an approximate solution to an initial value problem and explain the result’s meaning in context.
+
+\item[10.] Consider the initial value problem $\frac{dy}{dx} = -0.1x - 0.2y$, $y(0) = 0.5$.
+
+Apply Euler's Method with $\Delta x = 0.3$ to estimate $y(0.9)$.  
+
+Clearly show your work and thinking below (that is, show how at least one row in your table is determined), and fill in the given table accordingly (there are more rows in the table than you'll need; you decide how many rows you need).  Write at least one sentence to summarize your work and your final answer to the main question posed.
+
+
+\lr \lr
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\Delta x$ & $x$ & $y$ &  Slope   &  $\Delta y$ \\
+\hline
+  \ \hspace{0.5in} \ & \ \hspace{0.5in} \  & \ \hspace{0.5in} \  & \  \hspace{0.5in} \ & \  \hspace{0.5in} \ \\   \hline  
+  \ & \ & \ & \ & \ \\ \hline
+    \ & \ & \ & \ & \ \\  \hline
+  \ & \ & \ & \ & \ \\  \hline
+   \ & \ & \ & \ & \ \\   \hline
+   \ & \ & \ & \ & \ \\   \hline   
+   \ & \ & \ & \ & \ \\  
+\hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+%{\bf LT 12}:  I can express real world situations as differential equations, determine any stable or unstable equilibrium solutions, and explain the significance of the equilibrium solutions in context. (Section 7.5)
+
+% do a mixing problem
+
+\item[11.]  
+
+\be
+	\item Suppose that a person has a bank account with $A(t)$ dollars in it in year $t$.  The account earns 5\% annual interest, compounded continuously, and they also withdraw \$1000 once a year.
+	
+	\be
+		\item Set up a differential equation whose solution is $A(t)$.  Write to demonstrate your thinking.
+		\lr \tr
+		
+		\item What is the equilibrium solution to the differential equation you determined?  Why does this make sense?  Explain.
+		\lr \tr
+		
+	\ee
+	
+	
+	\item A population, $P(t)$, of fish in a large lake grows at a rate of 2\% per year, and humans also plant fish in the lake at a rate of 1000 fish per year.
+	
+	\be
+		\item Set up a differential equation whose solution is $P(t)$.  Write to demonstrate your thinking.
+		\lr \tr
+		
+		\item Why is there no positive equilibrium solution to this differential equation?  Explain in light of the physical conditions described above that govern the population $P(t)$.
+		\lr
+	\ee
+	
+	\item Is the solution in (a) stable or unstable?  Why?
+	
+\ee
+
+\pagebreak
+
+\item[12.] This question asks you to find two different Taylor polynomials, given different information about functions.
+
+	\be
+		\item Suppose that $f(x)$ is a function and that we know the following information about $f(x)$ and its first 4 derivatives:
+$$f(2) = 5, \ f'(2) = -3, \ f''(2) = 0, \, f'''(2) = -1, \ f^{(4)}(2) = 3$$
+Determine $P_4(x)$, the degree 4Taylor polynomial approximation to $y = f(x)$ centered at $a = 2$.
+
+\mr \tr
+
+		\item Now let $f(x) = \frac{1}{x^2} = x^{-2}$.  Determine the degree 2 Taylor polynomial approximation, $P_2(x)$, to $f(x)$, centered at $a = 1$.  Clearly show the work and thinking that leads to your result.
+	\ee
+
+	
+\end{enumerate}
+\end{document}

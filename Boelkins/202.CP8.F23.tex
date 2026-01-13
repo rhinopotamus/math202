@@ -1,0 +1,226 @@
+\documentclass[11 pt]{article}
+
+\setlength{\oddsidemargin}{-.45in}
+%\setlength{\evensidemargin}{-.5in}
+\setlength{\textwidth}{7.25in}
+\setlength{\topmargin}{-0.95in}
+\setlength{\textheight}{10.2in}
+
+\usepackage{graphics}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+%\usepackage{multicol}
+%\usepackage{wrapfig}
+\pagestyle{empty}
+
+\usepackage[T1]{fontenc}
+\usepackage{baskervald}
+\usepackage[bigdelims,vvarbb]{newtxmath} 
+
+\newcommand{\ds}{\ensuremath{\displaystyle}}
+\newcommand{\tr}{\vspace{0.5in}}
+\newcommand{\lr}{\vspace{1.0in}}
+\newcommand{\mr}{\vspace{2.0in}}
+\newcommand{\br}{\vspace{3.0in}}
+
+\newcommand{\ps}{Problem Set~}
+\newcommand{\vi}{\ensuremath{\mathbf{i}}}
+\newcommand{\vj}{\ensuremath{\mathbf{j}}}
+\newcommand{\vk}{\ensuremath{\mathbf{k}}}
+\newcommand{\vr}{\ensuremath{\mathbf{r}}}
+\newcommand{\vecv}{\ensuremath{\mathbf{v}}}
+\newcommand{\vu}{\ensuremath{\mathbf{u}}}
+\newcommand{\va}{\ensuremath{\mathbf{a}}}
+\newcommand{\vs}{\ensuremath{\mathbf{s}}}
+\newcommand{\ve}{\ensuremath{\mathbf{e}}}
+\newcommand{\vx}{\ensuremath{\mathbf{x}}}
+\newcommand{\vc}{\ensuremath{\mathbf{c}}}
+\newcommand{\vb}{\ensuremath{\mathbf{b}}}
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true, linkcolor=blue,  anchorcolor=blue,  
+citecolor=blue, filecolor=blue, menucolor=blue, pagecolor=blue,  
+urlcolor=blue,pdftitle={MTH 202 Checkpoint}}
+
+\usepackage{framed}
+
+\newcommand{\bdr}{\ensuremath{\mathbb{R}}}
+
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\bi}{\begin{itemize}}  
+\newcommand{\ei}{\end{itemize}}
+
+%\renewcommand{\baselinestretch}{1.5}
+
+
+\begin{document}
+ \hfill Boelkins \\
+ 
+\begin{center}
+Math 202-06 \\
+{\bf Checkpoint 8}
+\end{center}
+
+
+\noindent {\bf Directions:}
+
+\begin{itemize}
+	
+	\item {\bf Desmos.} You may use \href{https://www.desmos.com/calculator}{\emph{Desmos}} for computations and graphing, just like we do during class.  Any work done in \emph{Desmos} must be summarized and briefly explained in writing on your paper.  
+	
+	\item {\bf Resources.} During each checkpoint, you may access your own 1 page of study notes, plus \emph{Desmos}; no other uses of your computer or tablet are permitted unless specified directly.  No collaboration with other human beings or other internet resources are allowed.
+	
+%	\emph{Note well: if you collaborate with someone else, it is often obvious that collaboration has occurred.  Please do not put your academic standing at risk by doing this.}
+	
+	\item {\bf Competence.} Each week, your goal is to demonstrate competence on as many of the included learning targets as you can.  Each question will be marked either ``Y'' or ``NY'': Y for ``yes'', NY for ``not yet''.  Every learning target will appear on three different checkpoints, so you'll have multiple attempts to demonstrate your understanding.  ``Competence'' is defined as work that demonstrates clear and complete understanding of the relevant concepts in the learning target. While the work may include a minor error, or one or two minor steps may not be well explained, otherwise the work is complete, correct, and convincing, including the proper use of notation, and appropriate explanation of meaning that uses correct terminology.  (On rare occasions, you might get a ``NY*''; such a mark means you are close to competence and that you have the option to have a short conversation with me prior to the next Checkpoint and attempt to demonstrate ``Y''-level understanding through the conversation aloud.)	
+\end{itemize}
+
+\noindent \hrulefill \\
+
+\noindent {\bf Learning Targets:} For Checkpoint \#8, there are {\bf four} learning targets being assessed: 
+
+\begin{quote}
+{\bf LT 7}: I can use definite integrals to find the mass and center of mass of an object.
+\end{quote}
+
+\begin{quote}
+{\bf LT 8}: I can use definite integrals to represent key quantities in applications such as the work done by a varying force or the pressure that water exerts against a dam. (Section 6.4)
+\end{quote}
+
+\begin{quote}
+{\bf LT 9}: I can check whether a function is a solution to a differential equation and explain why the function is or is not a solution.
+\end{quote}
+
+\begin{quote}
+{\bf LT 10}:  I can apply Euler’s Method to generate an approximate solution to an initial value problem and explain the result’s meaning in context.
+\end{quote}
+
+
+\noindent \hrulefill \\
+
+\vfill \hfill {\bf OVER} 
+
+\pagebreak
+
+\noindent Name: \\ 
+
+\noindent To demonstrate competence on Learning Target \#$n$, you need to correctly respond to all or nearly all of the prompts in question \#$n$.  
+
+\begin{enumerate}
+
+
+%{\bf LT 7}: I can use definite integrals to find the mass and center of mass of an object.
+
+\item[7.]  Let a thin rod with constant cross-sectional area of $1$ cm$^2$ be given.  Assume the rod is 10 cm long and is situated so that its left end lies at $x = 0$ on the horizontal axis.  Suppose that the rod's density is distributed along the rod by the function $\ds \rho(x) = 1 - \cos \left(\frac{3x}{\pi}\right)$, measured in grams per cm.
+
+	\be
+		\item From the graph of $\rho(x)$ (without doing any computations), do you expect the rod's center of mass, $\overline{x}$, to lie at $x = 5$, left of $x = 5$, or right of $x = 5$?  Why?
+		
+		\tr \tr
+		
+		\item Find the mass $M$ and center of mass $\overline{x}$ by stating appropriate definite integrals and evaluating them using technology.  Clearly identify your results.
+		
+		\mr \tr
+		
+		\item From the graph of $\rho(x)$ (without doing any computations), how would the rod's mass and center of mass change (if at all) if the density function was instead $\ds \rho(x) = 1 + \cos \left(\frac{3x}{\pi}\right)$?  Write a sentence to discuss.
+		
+		\tr \tr
+		
+		\item Returning to the original density function function $\ds \rho(x) = 1 - \cos \left(\frac{3x}{\pi}\right)$ for the bar of length 10 cm, estimate the value of $a$ for which 50\% of the mass of the bar lies to the left of $a$.  Show a clear summary of your work and thinking. 
+	\ee	
+
+\pagebreak
+
+\noindent Name: \\ 
+
+% {\bf LT 8}: I can use definite integrals to represent key quantities in applications such as the work done by a varying force or the pressure that water exerts against a dam. (Section 6.4)
+
+\item[8.] Consider a trough with a semicircular end as pictured below.  {\bf \emph{Remember}}: the equation of a circle of radius $r$ centered at $(0,0)$ is $x^2 + y^2 = r^2$.
+
+
+Assume the trough is 16 feet wide along its top, 8 feet deep, 10 feet long, and that it is full of water to a depth of 6 feet.   As usual, the weight density of water is 62.4 pounds per cubic foot.
+
+\be
+	\item \emph{Determine the total amount of work that would be required to empty the top 4 feet of water from the tank and pump the water to a truck whose tank is 7 feet above the top of the tank}.  In your response, clearly show the relevant slice(s) and computations that are involved in determining the definite integral that answers the question.  State the appropriate definite integral clearly and evaluate it using technology to determine the total work to achieve the task noted above.  Include units on your result.
+	
+\hfill \scalebox{0.45}{\includegraphics{images/LT8-trough-2}}
+
+\lr
+	
+	\item Now suppose that the tank is in its initial state: full of water to a depth of 6 feet.  \emph{Determine the total amount of hydrostatic force on one end of the trough}.  Clearly show relevant slices that go in to determining the definite integral that answers the question. State the appropriate definite integral clearly and evaluate it using technology to determine the total work to achieve the task noted above.  Include units on your result.
+\ee  
+
+\hfill \scalebox{0.45}{\includegraphics{images/LT8-trough-2}}
+
+\lr
+	
+
+\pagebreak
+
+\noindent Name: \\ 
+
+%{\bf LT 9}: I can check whether a function is a solution to a differential equation and explain why the function is or is not a solution.
+
+\item[9.] For each of the following prompts, determine whether or not the given function is or is not a solution to the given differential equation.  For each, show your computational/algebraic work and write a brief sentence to clearly justify your conclusion.
+	
+	
+	\be
+		\item $y(t) = \frac{1}{4}t^4 + e^{-2t} + 11$; $\frac{dy}{dt} = t^3 - 2e^{2t}$		
+	
+		\lr \tr \tr
+	
+		\item $P(t) = -3$; $\frac{dP}{dt} = -3(4-P)(3-P)$
+		
+		\lr \tr \tr
+		
+		\item $F(t) = 60 + 20e^{-0.1t}$; $\frac{dF}{dt} = -\frac{1}{10}F  + 6$
+		
+		\lr \tr \tr
+		
+		\item $A(t) = Ce^{5t}$; $\frac{dA}{dt} = -5A$
+		
+		\lr \tr
+		
+
+	\ee
+
+\pagebreak
+
+\noindent Name: \\ 
+
+% {\bf LT 11}:  I can apply Euler’s Method to generate an approximate solution to an initial value problem and explain the result’s meaning in context.
+
+\item[10.] Consider the initial value problem $\frac{dy}{dx} = -x + y$, $y(0) = -0.5$.
+
+{\bf Apply Euler's Method with $\Delta x = 0.2$ to estimate $y(0.6)$.  }
+
+Clearly show your work and thinking below, and fill in the given table accordingly (there are more rows in the table than you'll need; you decide how many rows you need).  Write at least one sentence to summarize your work and your final answer to the main question posed (above {\bf in bold}).
+
+
+\lr \lr
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\Delta x$ & $x$ & $y$ &  Slope   &  $\Delta y$ \\
+\hline
+  \ \hspace{0.5in} \ & \ \hspace{0.5in} \  & \ \hspace{0.5in} \  & \  \hspace{0.5in} \ & \  \hspace{0.5in} \ \\   \hline  
+  \ & \ & \ & \ & \ \\ \hline
+    \ & \ & \ & \ & \ \\  \hline
+  \ & \ & \ & \ & \ \\  \hline
+   \ & \ & \ & \ & \ \\   \hline
+   \ & \ & \ & \ & \ \\  
+\hline
+\end{tabular}
+\end{center}
+
+
+	
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,178 @@
+ \documentclass[11 pt]{article}
+
+\setlength{\oddsidemargin}{-.45in}
+%\setlength{\evensidemargin}{-.5in}
+\setlength{\textwidth}{7.25in}
+\setlength{\topmargin}{-0.95in}
+\setlength{\textheight}{10.2in}
+
+\usepackage{graphics}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+%\usepackage{multicol}
+%\usepackage{wrapfig}
+\pagestyle{empty}
+
+\usepackage[T1]{fontenc}
+\usepackage{baskervald}
+\usepackage[bigdelims,vvarbb]{newtxmath} 
+
+\newcommand{\ds}{\ensuremath{\displaystyle}}
+\newcommand{\tr}{\vspace{0.5in}}
+\newcommand{\lr}{\vspace{1.0in}}
+\newcommand{\mr}{\vspace{2.0in}}
+\newcommand{\br}{\vspace{3.0in}}
+
+\newcommand{\ps}{Problem Set~}
+\newcommand{\vi}{\ensuremath{\mathbf{i}}}
+\newcommand{\vj}{\ensuremath{\mathbf{j}}}
+\newcommand{\vk}{\ensuremath{\mathbf{k}}}
+\newcommand{\vr}{\ensuremath{\mathbf{r}}}
+\newcommand{\vecv}{\ensuremath{\mathbf{v}}}
+\newcommand{\vu}{\ensuremath{\mathbf{u}}}
+\newcommand{\va}{\ensuremath{\mathbf{a}}}
+\newcommand{\vs}{\ensuremath{\mathbf{s}}}
+\newcommand{\ve}{\ensuremath{\mathbf{e}}}
+\newcommand{\vx}{\ensuremath{\mathbf{x}}}
+\newcommand{\vc}{\ensuremath{\mathbf{c}}}
+\newcommand{\vb}{\ensuremath{\mathbf{b}}}
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true, linkcolor=blue,  anchorcolor=blue,  
+citecolor=blue, filecolor=blue, menucolor=blue, pagecolor=blue,  
+urlcolor=blue,pdftitle={MTH 202 Checkpoint}}
+
+\usepackage{framed}
+
+\newcommand{\bdr}{\ensuremath{\mathbb{R}}}
+
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\bi}{\begin{itemize}}  
+\newcommand{\ei}{\end{itemize}}
+
+%\renewcommand{\baselinestretch}{1.5}
+
+
+\begin{document}
+ \hfill Boelkins \\
+ 
+\begin{center}
+Math 202-06 \\
+{\bf Checkpoint 12}
+\end{center}
+
+
+\noindent {\bf Directions:}
+
+\begin{itemize}
+	
+	\item {\bf Desmos.} You may use \href{https://www.desmos.com/calculator}{\emph{Desmos}} for computations and graphing, just like we do during class.  Any work done in \emph{Desmos} must be summarized and briefly explained in writing on your paper.  
+	
+	\item {\bf Resources.} During each checkpoint, you may access your own 1 page of study notes, plus \emph{Desmos}; no other uses of your computer or tablet are permitted unless specified directly.  No collaboration with other human beings or other internet resources are allowed.
+	
+%	\emph{Note well: if you collaborate with someone else, it is often obvious that collaboration has occurred.  Please do not put your academic standing at risk by doing this.}
+	
+	\item {\bf Competence.} Each week, your goal is to demonstrate competence on as many of the included learning targets as you can.  Each question will be marked either ``Y'' or ``NY'': Y for ``yes'', NY for ``not yet''.  Every learning target will appear on three different checkpoints, so you'll have multiple attempts to demonstrate your understanding.  ``Competence'' is defined as work that demonstrates clear and complete understanding of the relevant concepts in the learning target. While the work may include a minor error, or one or two minor steps may not be well explained, otherwise the work is complete, correct, and convincing, including the proper use of notation, and appropriate explanation of meaning that uses correct terminology.  (On rare occasions, you might get a ``NY*''; such a mark means you are close to competence and that you have the option to have a short conversation with me prior to the next Checkpoint and attempt to demonstrate ``Y''-level understanding through the conversation aloud.)	
+\end{itemize}
+
+\noindent \hrulefill \\
+
+\noindent {\bf Learning Targets:} For Checkpoint \#12, there are three learning targets being assessed: 
+
+
+\begin{quote}
+{\bf LT 12}:  Given appropriate information about a function, I can find its Taylor polynomials at a given center a.
+\end{quote}
+
+\begin{quote}
+{\bf LT 13}:  I can determine whether or not an infinite series is geometric and, if so, find its sum.
+\end{quote}
+
+\begin{quote}
+{\bf LT 14}: I can use the Taylor series of one or more familiar functions to find the Taylor series for a related function.
+\end{quote}
+
+\noindent \hrulefill \\
+
+\vfill \hfill {\bf OVER} 
+
+\pagebreak
+
+\noindent Name: \\ 
+
+\noindent To demonstrate competence on Learning Target \#$n$, you need to correctly respond to all or nearly all of the prompts in question \#$n$.  
+
+\begin{enumerate}
+
+%{\bf LT 12}:  Given appropriate information about a function, I can find its Taylor polynomials at a given center a.
+
+\item[12.] This question asks you to find two different Taylor polynomials, given different information about functions.
+
+	\be
+
+		\item Now let $f(x) = \frac{1}{x} = x^{-1}$.  Determine the degree 2 Taylor polynomial approximation, $P_2(x)$, to $f(x)$, centered at $a = 2$.  Clearly show the work and thinking that leads to your result.
+
+\mr \tr
+
+		\item Suppose that $f(x)$ is a function and that we know the following information about $f(x)$ and its first 4 derivatives:
+$$f(-1) = 3, \ f'(-1) = \frac{1}{2}, \ f''(-1) = -1, \, f'''(-1) = 0, \ f^{(4)}(-1) = \frac{1}{5} $$
+Determine $P_4(x)$, the degree 4 Taylor polynomial approximation to $y = f(x)$ centered at $a = -1$.
+	\ee
+
+\pagebreak
+
+%{\bf LT 14}: I can determine whether or not an infinite series is geometric and, if so, find its sum.
+
+\item[13.] For each of the following infinite series, 
+\begin{itemize}
+	\item determine whether or not the series is geometric: \\
+	\ \ if yes, state $a$ and $r$; \\
+	\ \ if no, explain why it is not geometric
+	\item if the series is geometric and it converges, find its exact sum; \\
+	\ \ if the series is geometric and doesn't converge, find $S_{10}$, the sum of the first 10 terms of the series, and clearly show the formula you use to find that sum; \\
+	\ \ if the series is not geometric, you are finished after saying why it's not geometric
+\end{itemize}
+
+	\be
+
+		\item $\ds 16 - 12 + 9 - \frac{27}{4} + \frac{81}{16} + \cdots + 16 \cdot \left( \frac{-3}{4} \right)^{n-1} + \cdots$
+
+	
+			\lr \lr
+		
+		\item $\ds 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots + \frac{(-1)^{n-1}}{2n+1} + \cdots$
+	
+			\lr \lr	
+		
+		\item $\ds \sum_{k = 2}^{\infty} 9 \left( \frac{4}{3} \right)^k$
+		
+	\ee
+		
+\pagebreak
+
+% I can use the Taylor series of one or more familiar functions to find the Taylor series for a related function.
+
+\item[14.] Find the Taylor series for each of the following functions using one of the 5 known Taylor series we've established in class.  Clearly show the known Taylor series you use and the algebraic and/or calculus steps you used to find the desired Taylor series.  Show at least the first 4 nonzero terms of the Taylor series you find.
+		
+		\be
+			\item $g(x) = x^5 e^{-x^2}$
+			
+			\mr \tr
+			
+			\item $h(x) = \frac{x^4}{1 - x^3}$
+			
+			\mr \tr
+			
+			\item The antiderivative, $F(x)$, of $f(x) = \cos(x^3)$ that satisfies $F(0) = 5$. \\  (That is, find the Taylor series for $F(x)$.)
+			
+			
+		\ee
+
+	
+\end{enumerate}
+\end{document}
