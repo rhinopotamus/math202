@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
-\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,enumitem,tikz, fancyhdr, wrapfig, textcomp, siunitx, mathptmx, pdfpages, cancel, multicol}
+\usepackage{ifpdf,amsmath, amssymb, comment, color, graphicx, stmaryrd,setspace,tikz, fancyhdr, wrapfig, textcomp, siunitx, mathptmx, pdfpages, cancel, multicol}
+\usepackage[shortlabels]{enumitem}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -46,6 +47,6 @@
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \lhead{MATH 202}
-\rhead{Spring 2025}
+\rhead{Spring 2026}
 %\lfoot{\copyright\ CLEAR Calculus 2010}
-%\cfoot{}
+\cfoot{}
