@@ -1,0 +1,35 @@
+\input{../header}
+\hyphenpenalty=5000
+
+\rhead{Your name: \rule{8cm}{0.15mm}}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\everymath{\displaystyle}
+
+\section{Learning target D4, version 1}
+
+Find general solutions to separable differential equations, and use initial values to determine the value of the constant of integration.
+
+\hrulefill
+
+Suppose that a cylindrical water tank with a hole in the bottom is filled with water. The water, of course, will leak out and the height of the water will decrease. Let $h(t)$ denote the height of the water. A physical principle called \textit{Torricelli's Law} implies that the height decreases at a rate proportional to the square root of the height:
+\footnote{Conservation of energy: the kinetic energy of water leaving the tank is equal to the change in GPE.}
+
+\[\dfrac{dh}{dt} = -k \sqrt{h}, \quad k > 0.
+\]
+
+\begin{enumerate}
+	\item Suppose you have a tank for which the height decreases at a rate of 20 inches per minute when the water is filled to a depth of 100 inches. Find the value of $k$.
+	\vfill
+	\item Now solve the differential equation.
+	\vfill
+	\vfill
+	\item Finally, use the initial condition $h(0) = 100$ to find the value of the constant of integration.
+	\vfill
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
