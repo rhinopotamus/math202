@@ -1,0 +1,60 @@
+\input{../header}
+\hyphenpenalty=5000
+
+\rhead{Your name: \rule{8cm}{0.15mm}}
+
+\begin{document}
+
+\everymath{\displaystyle}
+
+\section{Learning target T2, version 1}
+
+Use the Taylor series of familiar functions to find the Taylor series for a related function.
+
+\hrulefill
+
+
+\newcommand{\sinc}{\operatorname{sinc}}
+Consider the function $f(x) = \sin(x)$, whose Taylor series is 
+\[\sin(x) = \sum_{n=0}^\infty \dfrac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!} + \ldots\]
+
+\begin{enumerate}[leftmargin=15pt]
+	\item Write down a Taylor series for the function
+	\(\sinc(x) := \dfrac{\sin(x)}{x} = \dfrac{1}{x} \cdot \sin(x).\) \\
+	(I am told that this function is important in signal processing for some reason.)
+
+	\vfill
+
+	\item If $g(x) = \sinc(x)$, find the Taylor series for an antiderivative $G(x)$ such that $G(0) = 0$.\\
+	(This is called the ``sine integral'' $\operatorname{Si}(x)$ and it is also apparently important in signal processing.)
+
+	\vfill
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{Learning target T2, version 2}
+
+Use the Taylor series of familiar functions to find the Taylor series for a related function.
+
+
+
+\hrulefill
+
+Consider the function $f(x) = \sin(x)$, whose Taylor series is 
+\[\sin(x) = \sum_{n=0}^\infty \dfrac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!} + \ldots\]
+
+\begin{enumerate}[leftmargin=15pt]
+	\item Write down a Taylor series for the function $\sin(x^2)$.
+
+	\vfill
+
+	\item The Fresnel integral $S(x) = \int \sin(x^2)\ dx$ is important in optics, but as you may surmise, there is not an elementary antiderivative of $\sin(x^2)$. Darn! Guess we'll have to write down a power series representation for it instead.
+
+	\vfill
+
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
